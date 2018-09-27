@@ -1,0 +1,23 @@
+<h2>E - Kita Users</h2>
+
+
+
+<ul class="users">
+  <li *ngFor="let user of users">
+  	<a routerLink="/userdetail/{{user.id}}">
+    <span class="badge">{{user.id}}</span> {{user.name}}
+    </a>
+    <button class="delete" title="delete user"
+  (click)="delete(user)">x</button>
+  </li>
+</ul>
+<div>
+	<h3>Tambah User</h3>
+  <label>User name:
+    <input #userName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(userName.value); userName.value=''">
+    add
+  </button>
+</div>
