@@ -1,0 +1,105 @@
+<h2>E - Kita Items</h2>
+
+<table>
+	<tr>
+    <th>id</th>
+    <th>level</th>
+    <th>category</th>
+    <th>topic</th>
+    <th>title</th>
+    <th>answer</th>
+    <th>xp</th>
+    <th>image</th>
+    <th>sound</th>
+	</tr>
+  <tr *ngFor="let item of items">
+  	<a routerLink="/itemdetail/{{item.id}}">
+    <td>{{item.id}}</td>
+    </a>
+    <td>{{item.level}}</td>
+    <td>{{item.category}}</td>
+    <td>{{item.topic}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.answer}}</td>
+    <td>{{item.xp}}</td>
+    <td>{{item.image}}</td>
+    <td>{{item.sound}}</td>
+  </tr>
+</table>
+
+<p>
+Let's update the item component
+</p>
+<label>Select Level : </label>
+<select [(ngModel)]="selectedOption">
+   <option *ngFor="let o of options">
+      {{o.name}}
+   </option>
+</select>
+<br>
+<!-- <button (click)="print()">Click me</button> untuk mengirim value-->
+<!-- <p>Button output: {{ printedOption }}</p> untuk mencetak value -->
+
+<label>Kategori : </label>
+<div [ngSwitch]="selectedOption">
+	<div *ngSwitchCase="'easy'">
+		<select [(ngModel)]="selectedCategory">
+		   <option>
+		      {{categories[0].name}}
+		   </option>
+		</select>
+	</div>
+	<div *ngSwitchCase="'medium'">
+		<select [(ngModel)]="selectedCategory">
+		   <option>{{categories[0].name}}</option>
+		   <option>{{categories[1].name}}</option>
+		</select>
+	</div>
+	<div *ngSwitchCase="'hard'">
+		<select [(ngModel)]="selectedCategory">
+		   <option>{{categories[0].name}}</option>
+		   <option>{{categories[1].name}}</option>
+		   <option>{{categories[2].name}}</option>
+		</select>
+	</div>
+</div>
+
+Selected Category : {{selectedCategory}}
+<br>
+
+<label>Item Creation</label>
+<div [ngSwitch]="selectedCategory">
+	<div *ngSwitchCase="categories[0].name">
+		CRUD {{categories[0].name}} item
+	</div>
+	<div *ngSwitchCase="categories[1].name">
+		CRUD {{categories[1].name}} item
+	</div>
+	<div *ngSwitchCase="categories[2].name">
+		CRUD {{categories[2].name}} item
+	</div>
+</div>
+
+Learning Topic
+
+<label>Select Topic : </label>
+<select [(ngModel)]="selectedTopic">
+   <option *ngFor="let topic of topics">
+      {{topic.name}}
+   </option>
+</select>
+Selected Topic : {{selectedTopic}}
+
+
+<div>
+	<h3>Tambah Item</h3>
+  <label>Item Title : <input #title /></label>
+  <label>Item Answer : <input #answer /></label>
+  <label>Item xp : <input #xp /></label>
+  <label>Item image : <input #image /></label>
+  <label>Item sound : <input #sound /></label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(title);">
+    add
+  </button>
+</div>

@@ -1,5 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Hero } from './hero';
+import { User } from './user';
 
 export class InMemoryDataService implements InMemoryDbService {
   
@@ -24,7 +24,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 4, name: 'user 4' },
       { id: 5, name: 'user 5' }
     ];
-    return {heroes, users};
+    const items = [
+      { id: 1, level: 'easy', category: 'vocabulary', topic: 'animal', title: 'sebutkan nama ikan', answer: 'ikan banyak', xp: 10, image: 'ikan.jpg', sound: 'ikan.mp3' },
+      { id: 2, level: 'medium', category: 'vocabulary', topic: 'furniture', title: 'sebutkan nama lemari', answer: 'lemari banyak', xp: 20, image: 'lemari.jpg', sound: 'lemari.mp3' }
+    ];
+    return {heroes, users, items};
   }
 
   // Overrides the genId method to ensure that a hero always has an id.
@@ -32,7 +36,7 @@ export class InMemoryDataService implements InMemoryDbService {
   // the method below returns the initial number (11).
   // if the heroes array is not empty, the method below returns the highest
   // hero id + 1.
-  genId(heroes: Hero[]): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
+  genId(users: User[]): number {
+    return users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 11;
   }
 }
