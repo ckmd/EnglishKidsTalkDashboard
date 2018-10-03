@@ -28,7 +28,12 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 1, level: 'easy', category: 'vocabulary', topic: 'animal', title: 'sebutkan nama ikan', answer: 'ikan banyak', xp: 10, image: 'ikan.jpg', sound: 'ikan.mp3' },
       { id: 2, level: 'medium', category: 'vocabulary', topic: 'furniture', title: 'sebutkan nama lemari', answer: 'lemari banyak', xp: 20, image: 'lemari.jpg', sound: 'lemari.mp3' }
     ];
-    return {heroes, users, items};
+    const   questionDifficulties = [
+    { id: 1, name: "easy" },
+    { id: 2, name: "medium" },
+    { id: 3, name: "hard" }
+  ];
+    return {heroes, users, items, questionDifficulties};
   }
 
   // Overrides the genId method to ensure that a hero always has an id.

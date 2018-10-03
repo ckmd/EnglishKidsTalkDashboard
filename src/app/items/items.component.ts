@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
+import { ItemsService } from '../service/items.service';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-items',
@@ -31,23 +33,23 @@ export class ItemsComponent implements OnInit {
     this.printedOption = this.selectedOption;
   }
 
-  constructor(private itemService: ItemService) { }
+   // constructor(private itemService: ItemService) { }
+   constructor (private itemsService : ItemsService, private router : Router){}
 
   ngOnInit() {
-    this.getItems();
+     this.getItems();
   }
   
   getItems(): void {
-  	this.itemService.getItems()
-        .subscribe(items => this.items = items);
+  	this.itemsService.getItems();
   }
 
-  add(selectedOption: string, selectedCategory: string, selectedTopic: string, title: string, answer: string, xp: number, image: string, sound: string): void {
-  title = title.trim();
-  if (!title) { return; }
-  this.itemService.addItem({ title } as Item)
-    .subscribe(item => {
-      this.items.push(item);
-    });
-}
+//   add(selectedOption: string, selectedCategory: string, selectedTopic: string, title: string, answer: string, xp: number, image: string, sound: string): void {
+//   title = title.trim();
+//   if (!title) { return; }
+//   this.itemService.addItem({ title } as Item)
+//     .subscribe(item => {
+//       this.items.push(item);
+//     });
+// }
 }

@@ -17,8 +17,13 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+//import { QuestionDifficultyComponent } from './question-difficulty/question-difficulty.component';
+import { ItemsService } from './service/items.service';
 
 @NgModule({
+  providers:[
+    ItemsService
+  ],
   declarations: [
     AppComponent,
     // HeroesComponent,
@@ -29,7 +34,8 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     UsersComponent,
     UserDetailComponent,
     ItemsComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+//    QuestionDifficultyComponent
   ],
   imports: [
     BrowserModule,
