@@ -1,0 +1,22 @@
+<h2>E - Kita Users uhuy</h2>
+
+<table>
+	<tr>
+    <th>id</th>
+    <th>profile_id</th>
+    <th>inventory_id</th>
+    <th>name</th>
+    <th>username</th>
+    <th>password</th>
+	</tr>
+  <tr *ngFor="let user of users">
+  	<a routerLink="/userdetail/{{user.id}}">
+    <td>{{user.id}}</td>
+    </a>
+    <td>{{user.profile_id}}</td>
+    <td>{{user.inventory_id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.password}}</td>
+  </tr>
+</table>
