@@ -1,11 +1,13 @@
-export class Item {
+export interface Item {
   id: number;
-  level: string;
-  category: string;
-  topic: string;
-  title: string;
-  answer: string;
-  xp: number; 
+  item_category_id: number;
+  name: string;
+  item_desc: string;
+  star: number;
   image: string;
-  sound: string;
+  x_coordinate: number;
+  y_coordinate: number;
+  createdAt: string;
+  updatedAt: string;
+  itemCategory: number;
 }

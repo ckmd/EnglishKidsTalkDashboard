@@ -1,29 +1,33 @@
-<h2>E - Kita Items</h2>
+<h2>E - Kita Items uhuy</h2>
+<!-- <h2>items</h2>
+    <ul *ngFor="let i of items">
+    <li>{{i.name}}</li>
+    </ul> -->
 
-<!-- <table>
+<table>
 	<tr>
     <th>id</th>
-    <th>level</th>
-    <th>category</th>
-    <th>topic</th>
-    <th>title</th>
-    <th>answer</th>
-    <th>xp</th>
+    <th>item_category_id</th>
+    <th>name</th>
+    <th>item_desc</th>
+    <th>star</th>
     <th>image</th>
-    <th>sound</th>
+    <th>x_coordinate</th>
+    <th>y_coordinate</th>
+    <th>item Category</th>
 	</tr>
   <tr *ngFor="let item of items">
   	<a routerLink="/itemdetail/{{item.id}}">
     <td>{{item.id}}</td>
     </a>
-    <td>{{item.level}}</td>
-    <td>{{item.category}}</td>
-    <td>{{item.topic}}</td>
-    <td>{{item.title}}</td>
-    <td>{{item.answer}}</td>
-    <td>{{item.xp}}</td>
+    <td>{{item.item_category_id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.item_desc}}</td>
+    <td>{{item.star}}</td>
     <td>{{item.image}}</td>
-    <td>{{item.sound}}</td>
+    <td>{{item.x_coordinate}}</td>
+    <td>{{item.y_coordinate}}</td>
+    <td>{{item.itemCategory?.id}}</td>
   </tr>
 </table>
 
@@ -36,7 +40,7 @@ Let's update the item component
       {{o.name}}
    </option>
 </select>
-<br> -->
+<br>
 <!-- <button (click)="print()">Click me</button> untuk mengirim value-->
 <!-- <p>Button output: {{ printedOption }}</p> untuk mencetak value -->
 

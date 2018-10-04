@@ -3,17 +3,30 @@ import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { ItemsService } from '../service/items.service';
 import { RouterModule, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
+  // templateUrl: `      `,
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
 
-	selectedItem: Item;
-	items: Item[];
+	public items =[];
 
+   constructor(private itemsService: ItemsService) { }
+   // constructor (private itemsService : ItemsService, private router : Router){}
+
+  ngOnInit() {
+    this.itemsService.getItems()
+    .subscribe(data => this.items = data);
+    // this.items = this.itemsService.getItems();
+  }
+  
+  // getItems(): void {
+  //   this.items = this.itemsService.getItems();
+  // }
  	printedOption: string;
 	selectedOption: string;
  	selectedCategory: string;
@@ -33,16 +46,6 @@ export class ItemsComponent implements OnInit {
     this.printedOption = this.selectedOption;
   }
 
-   // constructor(private itemService: ItemService) { }
-   constructor (private itemsService : ItemsService, private router : Router){}
-
-  ngOnInit() {
-     this.getItems();
-  }
-  
-  getItems(): void {
-  	this.itemsService.getItems();
-  }
 
 //   add(selectedOption: string, selectedCategory: string, selectedTopic: string, title: string, answer: string, xp: number, image: string, sound: string): void {
 //   title = title.trim();
