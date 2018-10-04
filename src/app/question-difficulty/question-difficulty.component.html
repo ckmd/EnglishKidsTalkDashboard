@@ -1,0 +1,18 @@
+<h2>E - Kita Question Difficulties</h2>
+
+<table>
+	<tr>
+    <th>id</th>
+    <th>difficulty</th>
+    <th>created at</th>
+    <th>updated at</th>
+	</tr>
+  <tr *ngFor="let level of levels">
+  	<a routerLink="/leveldetail/{{level.id}}">
+    <td>{{level.id}}</td>
+    </a>
+    <td>{{level.question_difficulty_name}}</td>
+    <td>{{level.createdAt}}</td>
+    <td>{{level.updatedAt}}</td>
+  </tr>
+</table>

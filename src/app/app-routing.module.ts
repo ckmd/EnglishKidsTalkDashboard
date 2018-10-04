@@ -5,6 +5,8 @@ import { ItemsComponent }      from './items/items.component';
 import { UserDetailComponent }      from './user-detail/user-detail.component';
 import { ItemDetailComponent }      from './item-detail/item-detail.component';
 import { UserShowComponent }      from './user/user-show/user-show.component';
+import { QuestionDifficultyComponent }      from './question-difficulty/question-difficulty.component';
+import { QuestionCategoryComponent }      from './question-category/question-category.component';
 
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
@@ -12,7 +14,9 @@ const routes: Routes = [
   { path: 'users', component: UserShowComponent },
   { path: 'itemdetail/:id', component: ItemDetailComponent },
   { path: 'userdetail/:id', component: UserDetailComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'question-difficulties', component: QuestionDifficultyComponent },
+  { path: 'question-categories', component: QuestionCategoryComponent },
 ];
 
 @NgModule({

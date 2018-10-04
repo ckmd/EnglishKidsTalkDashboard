@@ -14,13 +14,22 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemsService } from './service/items.service';
+
 import { UserShowComponent } from './user/user-show/user-show.component';
 import { UserService } from './service/user.service';
+
+import { QuestionDifficultyComponent } from './question-difficulty/question-difficulty.component';
+import { QuestionDifficultyService } from './service/questiondifficulty.service';
+
+import { QuestionCategoryComponent } from './question-category/question-category.component';
+import { QuestioncategoryService } from './service/questioncategory.service';
 
 @NgModule({
   providers:[
     ItemsService,
     UserService,
+    QuestionDifficultyService,
+    QuestioncategoryService,
   ],
   declarations: [
     AppComponent,
@@ -30,6 +39,8 @@ import { UserService } from './service/user.service';
     ItemsComponent,
     ItemDetailComponent,
     UserShowComponent,
+    QuestionDifficultyComponent,
+    QuestionCategoryComponent,
   ],
   imports: [
     BrowserModule,
