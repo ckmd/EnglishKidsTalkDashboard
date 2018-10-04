@@ -24,12 +24,17 @@ import { QuestionDifficultyService } from './service/questiondifficulty.service'
 import { QuestionCategoryComponent } from './question-category/question-category.component';
 import { QuestioncategoryService } from './service/questioncategory.service';
 
+import { LearningTopicShowComponent } from './learning-topic/learning-topic-show/learning-topic-show.component';
+import { LearningtopicService } from './service/learningtopic.service';
+import { LearningItemShowComponent } from './learning-item/learning-item-show/learning-item-show.component';
+
 @NgModule({
   providers:[
     ItemsService,
     UserService,
     QuestionDifficultyService,
     QuestioncategoryService,
+    LearningtopicService,
   ],
   declarations: [
     AppComponent,
@@ -41,6 +46,8 @@ import { QuestioncategoryService } from './service/questioncategory.service';
     UserShowComponent,
     QuestionDifficultyComponent,
     QuestionCategoryComponent,
+    LearningTopicShowComponent,
+    LearningItemShowComponent,
   ],
   imports: [
     BrowserModule,
