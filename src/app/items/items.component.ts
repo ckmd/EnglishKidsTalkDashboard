@@ -23,6 +23,12 @@ export class ItemsComponent implements OnInit {
     .subscribe(data => this.items = data);
     // this.items = this.itemsService.getItems();
   }
+    deleteItem(item: Item): void {
+    this.itemsService.deleteItem(item.id)
+      .subscribe( data => {
+        this.items = this.items.filter(u => u !== item);
+      });
+  }
   
   // getItems(): void {
   //   this.items = this.itemsService.getItems();

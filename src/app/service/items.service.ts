@@ -17,52 +17,11 @@ export class ItemsService {
     public getItems(): Observable<Item[]>{
     	return this.http.get<Item[]>(this.url);
     }
-    // getItems(){
-    // 	return[
-    // 	{"id":2,
-    // 	"item_category_id":1,
-    // 	"name":"Topi Sombrero",
-    // 	"item_desc":"Topi ajaib squidward",
-    // 	"star":123,
-    // 	"image":"https://farm8.static.flickr.com/7665/17161058117_46d594da68_b.jpg",
-    // 	"x_coordinate":123,
-    // 	"y_coordinate":123,
-    // 	"createdAt":"2018-10-03T15:31:40.963Z",
-    // 	"updatedAt":"2018-10-03T15:31:40.963Z",
-    // 	"itemCategory":null},
-    // 	 {"id":3,
-    // 	"item_category_id":1,
-    // 	"name":"Topi Sombrero baru",
-    // 	"item_desc":"Topi ajaib squidward",
-    // 	"star":123,
-    // 	"image":"https://farm8.static.flickr.com/7665/17161058117_46d594da68_b.jpg",
-    // 	"x_coordinate":123,
-    // 	"y_coordinate":123,
-    // 	"createdAt":"2018-10-03T15:31:40.963Z",
-    // 	"updatedAt":"2018-10-03T15:31:40.963Z",
-    // 	"itemCategory":null}
-    // 	{"id":2,
-    // 	"item_category_id":1,
-    // 	"name":"Topi Sombrero baru sekali",
-    // 	"item_desc":"Topi ajaib squidward",
-    // 	"star":123,
-    // 	"image":"https://farm8.static.flickr.com/7665/17161058117_46d594da68_b.jpg",
-    // 	"x_coordinate":123,
-    // 	"y_coordinate":123,
-    // 	"createdAt":"2018-10-03T15:31:40.963Z",
-    // 	"updatedAt":"2018-10-03T15:31:40.963Z",
-    // 	"itemCategory":null},
-    // 	 {"id":3,
-    // 	"item_category_id":1,
-    // 	"name":"Topi Sombrero baru baru sekali",
-    // 	"item_desc":"Topi ajaib squidward",
-    // 	"star":123,
-    // 	"image":"https://farm8.static.flickr.com/7665/17161058117_46d594da68_b.jpg",
-    // 	"x_coordinate":123,
-    // 	"y_coordinate":123,
-    // 	"createdAt":"2018-10-03T15:31:40.963Z",
-    // 	"updatedAt":"2018-10-03T15:31:40.963Z",
-    // 	"itemCategory":null}
-    // ];
-    // }
+        createItem(item: Item) {
+        return this.http.post<Item[]>(this.url, item);
+  }
+
+    deleteItem(id: number) {
+        return this.http.delete(this.url + '/' + id);
+  }
 }

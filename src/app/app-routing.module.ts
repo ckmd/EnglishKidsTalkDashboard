@@ -9,6 +9,7 @@ import { QuestionDifficultyComponent }      from './question-difficulty/question
 import { QuestionDifficultyCreateComponent }      from './question-difficulty-create/question-difficulty-create.component';
 import { QuestionCategoryComponent }      from './question-category/question-category.component';
 import { LearningTopicShowComponent }      from './learning-topic/learning-topic-show/learning-topic-show.component';
+import { ItemCreateComponent }      from './item/item-create/item-create.component';
 
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'question-difficulties/create', component: QuestionDifficultyCreateComponent },
   { path: 'question-categories', component: QuestionCategoryComponent },
   { path: 'learning-topics', component: LearningTopicShowComponent },
+  { path: 'items/create', component: ItemCreateComponent },
 ];
 
 @NgModule({
