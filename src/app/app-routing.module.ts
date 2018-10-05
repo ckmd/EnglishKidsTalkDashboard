@@ -6,6 +6,7 @@ import { UserDetailComponent }      from './user-detail/user-detail.component';
 import { ItemDetailComponent }      from './item-detail/item-detail.component';
 import { UserShowComponent }      from './user/user-show/user-show.component';
 import { QuestionDifficultyComponent }      from './question-difficulty/question-difficulty.component';
+import { QuestionDifficultyCreateComponent }      from './question-difficulty-create/question-difficulty-create.component';
 import { QuestionCategoryComponent }      from './question-category/question-category.component';
 import { LearningTopicShowComponent }      from './learning-topic/learning-topic-show/learning-topic-show.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'userdetail/:id', component: UserDetailComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'question-difficulties', component: QuestionDifficultyComponent },
+  { path: 'question-difficulties/create', component: QuestionDifficultyCreateComponent },
   { path: 'question-categories', component: QuestionCategoryComponent },
   { path: 'learning-topics', component: LearningTopicShowComponent },
 ];

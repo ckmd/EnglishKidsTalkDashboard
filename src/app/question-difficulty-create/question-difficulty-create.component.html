@@ -1,0 +1,19 @@
+<h2>add Question Difficulty</h2>
+<!-- <div class="col-md-6">
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="question_difficulty_name">Difficulty :</label>
+      <input type="question_difficulty_name" formControlName="question_difficulty_name" placeholder="Email" name="question_difficulty_name" class="form-control" id="question_difficulty_name">
+    </div>
+
+    <button class="btn btn-success">Update</button>
+  </form>
+</div> -->
+<div>
+  <label>Level name:
+    <input #levelName />
+  </label>
+  <button (click)="add(levelName.value); levelName.value=''">
+    add
+  </button>
+</div>

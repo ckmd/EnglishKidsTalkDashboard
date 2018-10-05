@@ -11,10 +11,29 @@ import { Observable } from 'rxjs';
 export class QuestionDifficultyComponent implements OnInit {
 
 	public levels = [];
+
   constructor(private questionDifficultyService : QuestionDifficultyService) { }
 
   ngOnInit() {
   	this.questionDifficultyService.getQuestionDifficulties()
   	.subscribe(data => this.levels = data);
+
   }
+
+  deleteQuestionDifficulty(questionDifficulty: QuestionDifficulty): void {
+    this.questionDifficultyService.deleteQuestionDifficulty(questionDifficulty.id)
+      .subscribe( data => {
+        this.levels = this.levels.filter(u => u !== questionDifficulty);
+      });
+  }
+
+  add(question_difficulty_name: string): void {
+  question_difficulty_name = question_difficulty_name.trim();
+  if (!question_difficulty_name) { return; }
+  this.questionDifficultyService.createQuestionDifficulty({ question_difficulty_name } as QuestionDifficulty)
+    .subscribe(questionDifficulty => {
+      this.levels.push(questionDifficulty);
+    });
+}
+
 }

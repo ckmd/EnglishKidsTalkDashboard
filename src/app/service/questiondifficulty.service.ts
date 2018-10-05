@@ -14,4 +14,10 @@ export class QuestionDifficultyService {
   public getQuestionDifficulties(): Observable<QuestionDifficulty[]>{
     	return this.http.get<QuestionDifficulty[]>(this.url);
     }
+	createQuestionDifficulty(questionDifficulty: QuestionDifficulty) {
+    	return this.http.post<QuestionDifficulty[]>(this.url, questionDifficulty);
+  }
+    deleteQuestionDifficulty(id: number) {
+    	return this.http.delete(this.url + '/' + id);
+  }
 }

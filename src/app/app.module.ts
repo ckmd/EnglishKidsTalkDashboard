@@ -27,6 +27,7 @@ import { QuestioncategoryService } from './service/questioncategory.service';
 import { LearningTopicShowComponent } from './learning-topic/learning-topic-show/learning-topic-show.component';
 import { LearningtopicService } from './service/learningtopic.service';
 import { LearningItemShowComponent } from './learning-item/learning-item-show/learning-item-show.component';
+import { QuestionDifficultyCreateComponent } from './question-difficulty-create/question-difficulty-create.component';
 
 @NgModule({
   providers:[
@@ -48,6 +49,7 @@ import { LearningItemShowComponent } from './learning-item/learning-item-show/le
     QuestionCategoryComponent,
     LearningTopicShowComponent,
     LearningItemShowComponent,
+    QuestionDifficultyCreateComponent,
   ],
   imports: [
     BrowserModule,
