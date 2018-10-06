@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionDifficultyService } from '../service/questiondifficulty.service';
 import { QuestionDifficulty } from '../model/QuestionDifficulty';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-question-difficulty',
@@ -12,11 +13,11 @@ export class QuestionDifficultyComponent implements OnInit {
 
 	public levels = [];
 
-  constructor(private questionDifficultyService : QuestionDifficultyService) { }
+  constructor(private questionDifficultyService : QuestionDifficultyService, private router : Router) { }
 
   ngOnInit() {
   	this.questionDifficultyService.getQuestionDifficulties()
-  	.subscribe(data => this.levels = data);
+  	.subscribe(levels => this.levels = levels);
 
   }
 
@@ -34,6 +35,10 @@ export class QuestionDifficultyComponent implements OnInit {
     .subscribe(questionDifficulty => {
       this.levels.push(questionDifficulty);
     });
+}
+
+onSelect(questionDifficulty){
+  this.router.navigate(['/question-difficulties', questionDifficulty.id]);
 }
 
 }

@@ -7,9 +7,13 @@ import { ItemDetailComponent }      from './item-detail/item-detail.component';
 import { UserShowComponent }      from './user/user-show/user-show.component';
 import { QuestionDifficultyComponent }      from './question-difficulty/question-difficulty.component';
 import { QuestionDifficultyCreateComponent }      from './question-difficulty-create/question-difficulty-create.component';
+import { QuestionDifficultyDetailComponent }      from './question-difficulty-detail/question-difficulty-detail.component';
 import { QuestionCategoryComponent }      from './question-category/question-category.component';
 import { LearningTopicShowComponent }      from './learning-topic/learning-topic-show/learning-topic-show.component';
 import { ItemCreateComponent }      from './item/item-create/item-create.component';
+import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-index.component';
+import { ChallengeDetailComponent } from './challenge/challenge-detail/challenge-detail.component';
+import { ChallengeCreateComponent } from './challenge/challenge-create/challenge-create.component';
 
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
@@ -20,9 +24,13 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'question-difficulties', component: QuestionDifficultyComponent },
   { path: 'question-difficulties/create', component: QuestionDifficultyCreateComponent },
+  { path: 'question-difficulties/:id', component: QuestionDifficultyDetailComponent },
   { path: 'question-categories', component: QuestionCategoryComponent },
   { path: 'learning-topics', component: LearningTopicShowComponent },
   { path: 'items/create', component: ItemCreateComponent },
+  { path: 'challenges', component: ChallengeIndexComponent },
+  { path: 'challenges/:id', component: ChallengeDetailComponent },
+  { path: 'challenges-create', component: ChallengeCreateComponent },
 ];
 
 @NgModule({

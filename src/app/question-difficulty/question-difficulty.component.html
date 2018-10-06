@@ -7,9 +7,7 @@
     <th>delete</th>
 	</tr>
   <tr *ngFor="let level of levels">
-  	<a routerLink="/leveldetail/{{level.id}}">
-    <td>{{level.id}}</td>
-    </a>
+    <a routerLink="/question-difficulties/{{level.id}}"><td>{{level.id}}</td></a>
     <td>{{level.question_difficulty_name}}</td>
     <td>
       <button class="btn btn-danger" (click)="deleteQuestionDifficulty(level)"> Delete</button>

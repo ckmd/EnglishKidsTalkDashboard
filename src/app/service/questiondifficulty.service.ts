@@ -14,6 +14,10 @@ export class QuestionDifficultyService {
   public getQuestionDifficulties(): Observable<QuestionDifficulty[]>{
     	return this.http.get<QuestionDifficulty[]>(this.url);
     }
+
+  getQuestionDifficulty(id: number) {
+    return this.http.get<QuestionDifficulty>(this.url + '/' + id);
+  }
     
 	createQuestionDifficulty(questionDifficulty: QuestionDifficulty) {
     	return this.http.post<QuestionDifficulty[]>(this.url, questionDifficulty);
@@ -21,5 +25,9 @@ export class QuestionDifficultyService {
 
     deleteQuestionDifficulty(id: number) {
     	return this.http.delete(this.url + '/' + id);
+  }
+
+  updateQuestionDifficulty(questionDifficulty: QuestionDifficulty){
+      return this.http.put<any>(this.url, questionDifficulty);
   }
 }

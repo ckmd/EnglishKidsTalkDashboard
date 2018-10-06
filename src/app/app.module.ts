@@ -28,7 +28,12 @@ import { LearningTopicShowComponent } from './learning-topic/learning-topic-show
 import { LearningtopicService } from './service/learningtopic.service';
 import { LearningItemShowComponent } from './learning-item/learning-item-show/learning-item-show.component';
 import { QuestionDifficultyCreateComponent } from './question-difficulty-create/question-difficulty-create.component';
+import { QuestionDifficultyDetailComponent } from './question-difficulty-detail/question-difficulty-detail.component';
 import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-index.component';
+import { ChallengeService } from './service/challenge.service';
+import { ChallengeDetailComponent } from './challenge/challenge-detail/challenge-detail.component';
+import { ChallengeCreateComponent } from './challenge/challenge-create/challenge-create.component';
 
 @NgModule({
   providers:[
@@ -37,6 +42,7 @@ import { ItemCreateComponent } from './item/item-create/item-create.component';
     QuestionDifficultyService,
     QuestioncategoryService,
     LearningtopicService,
+    ChallengeService,
   ],
   declarations: [
     AppComponent,
@@ -51,7 +57,11 @@ import { ItemCreateComponent } from './item/item-create/item-create.component';
     LearningTopicShowComponent,
     LearningItemShowComponent,
     QuestionDifficultyCreateComponent,
+    QuestionDifficultyDetailComponent,
     ItemCreateComponent,
+    ChallengeIndexComponent,
+    ChallengeDetailComponent,
+    ChallengeCreateComponent,
   ],
   imports: [
     BrowserModule,

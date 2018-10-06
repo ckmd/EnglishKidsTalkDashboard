@@ -1,0 +1,29 @@
+<h2>My Challenges</h2>
+
+<div>
+  <label>Challenge name:
+    <input #challengeName />
+  </label>
+<!--   (click) passes input value to add() and then clears the input -->
+  <button (click)="add(challengeName.value); challengeName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="challenges">
+  <li *ngFor="let challenge of challenges">
+    <a routerLink="/challenges/{{challenge.id}}">
+      <span class="badge">{{challenge.id}}</span>
+      <span class="badge">{{challenge.challenge_xp}}</span> {{challenge.challenge_question}}
+    </a>
+    <button class="delete" title="delete challenge"
+      (click)="delete(challenge)">x</button>
+  </li>
+</ul>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
