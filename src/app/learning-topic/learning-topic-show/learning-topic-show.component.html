@@ -7,14 +7,19 @@
     <th>question category id</th>
     <th>learning topic name</th>
     <th>learning topic image</th>
+    <th>action</th>
 	</tr>
   <tr *ngFor="let topic of topics">
-  	<a routerLink="/topicdetail/{{topic.id}}">
+  	<a routerLink="/learning-topics/{{topic.id}}">
     <td>{{topic.id}}</td>
     </a>
     <td>{{topic.question_difficulty_id}}</td>
     <td>{{topic.question_category_id}}</td>
     <td>{{topic.learning_topic_name}}</td>
     <td>{{topic.learning_topic_image}}</td>
+     <td>
+      <button class="btn btn-danger" (click)="delete(topic)"> Delete</button>
+    </td>
   </tr>
 </table>
+<a href="learning-topics-create"><button class="btn btn-success">create learning topic</button></a>

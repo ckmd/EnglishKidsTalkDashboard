@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LearningitemService } from '../../service/learningitem.service';
 import { LearningItem } from '../../model/learning-item';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-learning-item-index',
@@ -13,9 +12,7 @@ export class LearningItemIndexComponent implements OnInit {
 
 	public learningItems = [];
 
-  constructor(
-  	private learningItemService : LearningitemService,
-  	 private router : Router) { }
+  constructor(private learningItemService : LearningitemService) { }
 
   ngOnInit() {
   	this.learningItemService.getLearningItems()

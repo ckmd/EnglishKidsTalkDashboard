@@ -27,9 +27,12 @@ import { QuestioncategoryService } from './service/questioncategory.service';
 import { LearningTopicShowComponent } from './learning-topic/learning-topic-show/learning-topic-show.component';
 import { LearningtopicService } from './service/learningtopic.service';
 import { LearningItemShowComponent } from './learning-item/learning-item-show/learning-item-show.component';
+
 import { QuestionDifficultyCreateComponent } from './question-difficulty-create/question-difficulty-create.component';
 import { QuestionDifficultyDetailComponent } from './question-difficulty-detail/question-difficulty-detail.component';
+
 import { ItemCreateComponent } from './item/item-create/item-create.component';
+
 import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-index.component';
 import { ChallengeService } from './service/challenge.service';
 import { ChallengeDetailComponent } from './challenge/challenge-detail/challenge-detail.component';
@@ -40,8 +43,12 @@ import { LearningItemDetailComponent } from './learning-item/learning-item-detai
 import { LearningItemCreateComponent } from './learning-item/learning-item-create/learning-item-create.component';
 import { LearningItemUpdateComponent } from './learning-item/learning-item-update/learning-item-update.component';
 import { LearningitemService } from './service/learningitem.service';
+
 import { QuestionCategoryCreateComponent } from './question-category/question-category-create/question-category-create.component';
 import { QuestionCategoryDetailComponent } from './question-category/question-category-detail/question-category-detail.component';
+
+import { LearningTopicCreateComponent } from './learning-topic/learning-topic-create/learning-topic-create.component';
+import { LearningTopicDetailComponent } from './learning-topic/learning-topic-detail/learning-topic-detail.component';
 
 @NgModule({
   providers:[
@@ -77,6 +84,8 @@ import { QuestionCategoryDetailComponent } from './question-category/question-ca
     LearningItemUpdateComponent,
     QuestionCategoryCreateComponent,
     QuestionCategoryDetailComponent,
+    LearningTopicCreateComponent,
+    LearningTopicDetailComponent,
   ],
   imports: [
     BrowserModule,

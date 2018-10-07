@@ -18,4 +18,11 @@ export class LearningTopicShowComponent implements OnInit {
 
   }
 
+  delete(learningTopic: LearningTopic): void {
+    this.learningtopicService.deleteLearningTopic(learningTopic.id)
+      .subscribe( data => {
+        this.topics = this.topics.filter(u => u !== learningTopic);
+      });
+  }
+
 }
