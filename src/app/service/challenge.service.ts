@@ -62,7 +62,7 @@ export class ChallengeService {
 
   //////// Save methods //////////
   createChallenge(challenge: Challenge) {
-    return this.http.post(this.challengesUrl, challenge);
+    return this.http.post<Challenge>(this.challengesUrl, challenge);
   }
   /** POST: add a new challenge to the server */
   addChallenge (challenge: Challenge): Observable<Challenge> {

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import { Challenge } from '../../model/challenge';
+// import { Challenge } from '../../model/challenge';
 import { ChallengeService } from '../../service/challenge.service';
 import {Router} from "@angular/router";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-challenge-create',
@@ -11,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class ChallengeCreateComponent implements OnInit {
 
-constructor(private formBuilder: FormBuilder,private router: Router, private challengeService: ChallengeService) { }
+constructor(private formBuilder: FormBuilder,private router: Router, private challengeService: ChallengeService, private location : Location) { }
 	addForm: FormGroup;
   
   ngOnInit() {
@@ -23,6 +24,8 @@ constructor(private formBuilder: FormBuilder,private router: Router, private cha
 		challenge_star: ['', Validators.required],
 		challenge_image: ['', Validators.required],
 		challenge_question: ['', Validators.required],
+		questionDifficulty: ['', Validators.required],
+		users: ['', Validators.required],
     });
 
   }
@@ -37,8 +40,10 @@ constructor(private formBuilder: FormBuilder,private router: Router, private cha
   onSubmit() {
     this.challengeService.createChallenge(this.addForm.value)
       .subscribe( data => {
-        this.router.navigate(['challenge-index']);
+      	this.goBack();
       });
   }
-
+  goBack(): void {
+    this.location.back();
+  }
 }

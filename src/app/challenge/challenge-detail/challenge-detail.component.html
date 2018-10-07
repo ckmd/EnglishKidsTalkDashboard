@@ -2,13 +2,43 @@
   <h2>{{challenge.name | uppercase}} Details</h2>
   <div><span>id: </span>{{challenge.id}}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="challenge.challenge_question" placeholder="name"/>
+    <label>question_category_id:
+      <input [(ngModel)]="challenge.question_category_id"/>
     </label>
   </div>
   <div>
-    <label>xp:
-      <input [(ngModel)]="challenge.challenge_xp" placeholder="xp"/>
+    <label>question_difficulty_id :
+      <input [(ngModel)]="challenge.question_difficulty_id"/>
+    </label>
+  </div>
+    <div>
+    <label>challenge_xp:
+      <input [(ngModel)]="challenge.challenge_xp"/>
+    </label>
+  </div>
+    <div>
+    <label>challenge_star:
+      <input [(ngModel)]="challenge.challenge_star" />
+    </label>
+  </div>
+    <div>
+    <label>challenge_image:
+      <input [(ngModel)]="challenge.challenge_image" />
+    </label>
+  </div>
+    <div>
+    <label>challenge_question:
+      <input [(ngModel)]="challenge.challenge_question" />
+    </label>
+  </div>
+    <div>
+    <label>questionDifficulty:
+      <input [(ngModel)]="challenge.questionDifficulty" />
+    </label>
+  </div>
+    <div>
+    <label>users:
+      <input [(ngModel)]="challenge.users"/>
     </label>
   </div>
   <button (click)="goBack()">go back</button>

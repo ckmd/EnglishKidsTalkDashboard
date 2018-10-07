@@ -1,26 +1,41 @@
 <h2>My Challenges</h2>
 
-<div>
-  <label>Challenge name:
-    <input #challengeName />
-  </label>
-<!--   (click) passes input value to add() and then clears the input -->
-  <button (click)="add(challengeName.value); challengeName.value=''">
+<div><!--   (click) passes input value to add() and then clears the input -->
+  <button routerLink="/challenges-create">
     add
   </button>
 </div>
 
-<ul class="challenges">
-  <li *ngFor="let challenge of challenges">
-    <a routerLink="/challenges/{{challenge.id}}">
-      <span class="badge">{{challenge.id}}</span>
-      <span class="badge">{{challenge.challenge_xp}}</span> {{challenge.challenge_question}}
+<table>
+  <tr>
+    <th>id</th>
+    <th>question_category_id</th>
+    <th>question_difficulty_id</th>
+    <th>challenge_xp</th>
+    <th>challenge_star</th>
+    <th>challenge_image</th>
+    <th>challenge_question</th>
+    <th>questionDifficulty</th>
+    <th>users</th>
+    <th>delete</th>
+  </tr>
+  <tr *ngFor="let c of challenges">
+    <a routerLink="/challenges/{{c.id}}">
+    <td>{{c.id}}</td>
     </a>
-    <button class="delete" title="delete challenge"
-      (click)="delete(challenge)">x</button>
-  </li>
-</ul>
-
+    <td>{{c.question_category_id}}</td>
+    <td>{{c.question_difficulty_id}}</td>
+    <td>{{c.challenge_xp}}</td>
+    <td>{{c.challenge_star}}</td>
+    <td>{{c.challenge_image}}</td>
+    <td>{{c.challenge_question}}</td>
+    <td>{{c.questionDifficulty}}</td>
+    <td>{{c.users?.id}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(c)"> Delete</button>
+    </td>
+  </tr>
+</table>
 
 <!-- 
 Copyright 2017-2018 Google Inc. All Rights Reserved.

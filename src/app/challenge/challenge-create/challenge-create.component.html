@@ -1,36 +1,46 @@
 <div class="col-md-6">
-  <h2 class="text-center">Add User</h2>
-  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  <h2 class="text-center">Add Challenge</h2>
+  <form [formGroup]="addForm">
     <div class="form-group">
       <label for="question_category_id">question_category_id:</label>
-      <input formControlName="question_category_id" placeholder="question_category_id" name="question_category_id" class="form-control" id="question_category_id">
+      <input formControlName="question_category_id" placeholder="question_category_id" name="question_category_id" name="question_category_id" class="form-control" id="question_category_id">
     </div>
 
     <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+      <label for="question_difficulty_id">question_difficulty_id:</label>
+      <input formControlName="question_difficulty_id" placeholder="question_difficulty_id" name="question_difficulty_id" class="form-control" id="question_difficulty_id">
     </div>
 
     <div class="form-group">
-      <label for="lastName">Last Name:</label>
-      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+      <label for="challenge_xp">challenge_xp:</label>
+      <input formControlName="challenge_xp" placeholder="challenge_xp" name="challenge_xp" class="form-control" id="challenge_xp">
     </div>
 
     <div class="form-group">
-      <label for="email">Email address:</label>
-      <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+      <label for="challenge_star">challenge_star address:</label>
+      <input formControlName="challenge_star" placeholder="challenge_star" name="challenge_star" class="form-control" id="challenge_star">
     </div>
 
     <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+      <label for="challenge_image">challenge_image:</label>
+      <input formControlName="challenge_image" placeholder="challenge_image" name="challenge_image" class="form-control" id="challenge_image">
     </div>
 
     <div class="form-group">
-      <label for="lastName">Last Name:</label>
-      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+      <label for="challenge_question">challenge_question:</label>
+      <input formControlName="challenge_question" placeholder="challenge_question" name="challenge_question" class="form-control" id="challenge_question">
     </div>
 
-    <button class="btn btn-success">Update</button>
+    <div class="form-group">
+      <label for="questionDifficulty">questionDifficulty:</label>
+      <input formControlName="questionDifficulty" placeholder="questionDifficulty" name="questionDifficulty" class="form-control" id="questionDifficulty">
+    </div>
+
+    <div class="form-group">
+      <label for="users">users:</label>
+      <input formControlName="users" placeholder="users" name="users" class="form-control" id="users">
+    </div>
+    
+    <button (click)="onSubmit()" class="btn btn-success">Update</button>
   </form>
 </div>

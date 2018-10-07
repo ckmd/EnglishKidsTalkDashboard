@@ -34,6 +34,10 @@ import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-i
 import { ChallengeService } from './service/challenge.service';
 import { ChallengeDetailComponent } from './challenge/challenge-detail/challenge-detail.component';
 import { ChallengeCreateComponent } from './challenge/challenge-create/challenge-create.component';
+import { LearningItemIndexComponent } from './learning-item/learning-item-index/learning-item-index.component';
+import { LearningItemDetailComponent } from './learning-item/learning-item-detail/learning-item-detail.component';
+import { LearningItemCreateComponent } from './learning-item/learning-item-create/learning-item-create.component';
+import { LearningItemUpdateComponent } from './learning-item/learning-item-update/learning-item-update.component';
 
 @NgModule({
   providers:[
@@ -62,6 +66,10 @@ import { ChallengeCreateComponent } from './challenge/challenge-create/challenge
     ChallengeIndexComponent,
     ChallengeDetailComponent,
     ChallengeCreateComponent,
+    LearningItemIndexComponent,
+    LearningItemDetailComponent,
+    LearningItemCreateComponent,
+    LearningItemUpdateComponent,
   ],
   imports: [
     BrowserModule,
