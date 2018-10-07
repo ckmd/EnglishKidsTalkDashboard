@@ -1,3 +1,36 @@
-<p>
-  learning-item-create works!
-</p>
+<h2>add Learning Item</h2>
+<div class="col-md-6">
+  <form [formGroup]="addForm">
+    <div class="form-group">
+      <label for="learning_topic_id">learning_topic_id :</label>
+      <input type="learning_topic_id" formControlName="learning_topic_id" name="learning_topic_id" class="form-control" id="learning_topic_id">
+    </div>
+
+    <div class="form-group">
+      <label for="learning_item_xp">learning_item_xp :</label>
+      <input type="" formControlName="learning_item_xp" name="learning_item_xp" class="form-control" id="learning_item_xp">
+    </div>
+
+    <div class="form-group">
+      <label for="learning_item_title">learning_item_title :</label>
+      <input type="learning_item_title" formControlName="learning_item_title" name="learning_item_title" class="form-control" id="learning_item_title">
+    </div>
+    
+    <div class="form-group">
+      <label for="learning_item_image">learning_item_image :</label>
+      <input type="learning_item_image" formControlName="learning_item_image" name="learning_item_image" class="form-control" id="learning_item_image">
+    </div>
+    
+    <div class="form-group">
+      <label for="learning_item_sound">learning_item_sound :</label>
+      <input type="learning_item_sound" formControlName="learning_item_sound" name="learning_item_sound" class="form-control" id="learning_item_sound">
+    </div>
+    
+    <div class="form-group">
+      <label for="learning_item_answer">learning_item_answer :</label>
+      <input type="learning_item_answer" formControlName="learning_item_answer" name="learning_item_answer" class="form-control" id="learning_item_answer">
+    </div>
+
+    <button (click)="onSubmit()" class="btn btn-success">Update</button>
+  </form>
+</div>

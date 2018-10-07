@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { LearningitemService } from '../../service/learningitem.service';
+import { LearningItem } from '../../model/learning-item';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-learning-item-index',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LearningItemIndexComponent implements OnInit {
 
-  constructor() { }
+	public learningItems = [];
+
+  constructor(
+  	private learningItemService : LearningitemService,
+  	 private router : Router) { }
 
   ngOnInit() {
+  	this.learningItemService.getLearningItems()
+  	.subscribe(learningItems => this.learningItems = learningItems);
+
   }
 
+  delete(learningItem: LearningItem): void {
+    this.learningItemService.deleteLearningItem(learningItem.id)
+      .subscribe( data => {
+        this.learningItems = this.learningItems.filter(u => u !== learningItem);
+      });
+  }
 }

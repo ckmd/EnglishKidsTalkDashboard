@@ -1,3 +1,36 @@
-<p>
-  learning-item-detail works!
-</p>
+<div *ngIf="learningItem">
+  <h2>{{learningItem.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{learningItem.id}}</div>
+  <div>
+    <label>learning_topic_id:
+      <input [(ngModel)]="learningItem.learning_topic_id"/>
+    </label>
+  </div>
+  <div>
+    <label>learning_item_xp :
+      <input [(ngModel)]="learningItem.learning_item_xp"/>
+    </label>
+  </div>
+    <div>
+    <label>learning_item_title:
+      <input [(ngModel)]="learningItem.learning_item_title"/>
+    </label>
+  </div>
+    <div>
+    <label>learning_item_image:
+      <input [(ngModel)]="learningItem.learning_item_image" />
+    </label>
+  </div>
+    <div>
+    <label>learning_item_sound:
+      <input [(ngModel)]="learningItem.learning_item_sound" />
+    </label>
+  </div>
+    <div>
+    <label>learning_item_answer:
+      <input [(ngModel)]="learningItem.learning_item_answer" />
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

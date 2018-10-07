@@ -15,6 +15,11 @@ import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-i
 import { ChallengeDetailComponent } from './challenge/challenge-detail/challenge-detail.component';
 import { ChallengeCreateComponent } from './challenge/challenge-create/challenge-create.component';
 
+import { LearningItemIndexComponent } from './learning-item/learning-item-index/learning-item-index.component';
+import { LearningItemDetailComponent } from './learning-item/learning-item-detail/learning-item-detail.component';
+import { LearningItemCreateComponent } from './learning-item/learning-item-create/learning-item-create.component';
+import { LearningItemUpdateComponent } from './learning-item/learning-item-update/learning-item-update.component';
+
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
   { path: 'items', component: ItemsComponent },
@@ -31,6 +36,11 @@ const routes: Routes = [
   { path: 'challenges', component: ChallengeIndexComponent },
   { path: 'challenges/:id', component: ChallengeDetailComponent },
   { path: 'challenges-create', component: ChallengeCreateComponent },
+
+  { path: 'learning-items-create', component: LearningItemCreateComponent },
+  { path: 'learning-items', component: LearningItemIndexComponent },
+  { path: 'learning-items/:id', component: LearningItemDetailComponent },
+  { path: 'learning-items-update', component: LearningItemUpdateComponent },
 ];
 
 @NgModule({

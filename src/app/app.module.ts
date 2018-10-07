@@ -34,10 +34,12 @@ import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-i
 import { ChallengeService } from './service/challenge.service';
 import { ChallengeDetailComponent } from './challenge/challenge-detail/challenge-detail.component';
 import { ChallengeCreateComponent } from './challenge/challenge-create/challenge-create.component';
+
 import { LearningItemIndexComponent } from './learning-item/learning-item-index/learning-item-index.component';
 import { LearningItemDetailComponent } from './learning-item/learning-item-detail/learning-item-detail.component';
 import { LearningItemCreateComponent } from './learning-item/learning-item-create/learning-item-create.component';
 import { LearningItemUpdateComponent } from './learning-item/learning-item-update/learning-item-update.component';
+import { LearningitemService } from './service/learningitem.service';
 
 @NgModule({
   providers:[
@@ -47,6 +49,7 @@ import { LearningItemUpdateComponent } from './learning-item/learning-item-updat
     QuestioncategoryService,
     LearningtopicService,
     ChallengeService,
+    LearningitemService,
   ],
   declarations: [
     AppComponent,

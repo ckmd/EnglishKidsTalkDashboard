@@ -1,3 +1,27 @@
-<p>
-  learning-item-index works!
-</p>
+<h2>E - Kita learning Items</h2>
+
+<table>
+	<tr>
+    <th>id</th>
+    <th>topic id</th>
+    <th>item id</th>
+    <th>title</th>
+    <th>image</th>
+    <th>soung</th>
+    <th>answer</th>
+    <th>delete</th>
+	</tr>
+  <tr *ngFor="let l of learningItems">
+    <a routerLink="/learning-items/{{l.id}}"><td>{{l.id}}</td></a>
+    <td>{{l.learning_topic_id}}</td>
+    <td>{{l.learning_item_id}}</td>
+    <td>{{l.learning_item_title}}</td>
+    <td>{{l.learning_item_image}}</td>
+    <td>{{l.learning_item_sound}}</td>
+    <td>{{l.learning_item_answer}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(l)"> Delete</button>
+    </td>
+  </tr>
+</table>
+<a href="learning-items-create"><button class="btn btn-success">create learning item</button></a>
