@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
 import { LearningitemService } from '../../service/learningitem.service';
 import { LearningItem } from '../../model/learning-item';
+import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 

@@ -1,0 +1,12 @@
+<h2>add Question Category</h2>
+<div class="col-md-6">
+  <form [formGroup]="addForm">
+
+    <div class="form-group">
+      <label for="question_category_name">question_category_name :</label>
+      <input type="question_category_name" formControlName="question_category_name" name="question_category_name" class="form-control" id="question_category_name">
+    </div>
+
+    <button (click)="onSubmit()" class="btn btn-success">Update</button>
+  </form>
+</div>

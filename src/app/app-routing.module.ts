@@ -8,7 +8,6 @@ import { UserShowComponent }      from './user/user-show/user-show.component';
 import { QuestionDifficultyComponent }      from './question-difficulty/question-difficulty.component';
 import { QuestionDifficultyCreateComponent }      from './question-difficulty-create/question-difficulty-create.component';
 import { QuestionDifficultyDetailComponent }      from './question-difficulty-detail/question-difficulty-detail.component';
-import { QuestionCategoryComponent }      from './question-category/question-category.component';
 import { LearningTopicShowComponent }      from './learning-topic/learning-topic-show/learning-topic-show.component';
 import { ItemCreateComponent }      from './item/item-create/item-create.component';
 import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-index.component';
@@ -20,6 +19,10 @@ import { LearningItemDetailComponent } from './learning-item/learning-item-detai
 import { LearningItemCreateComponent } from './learning-item/learning-item-create/learning-item-create.component';
 import { LearningItemUpdateComponent } from './learning-item/learning-item-update/learning-item-update.component';
 
+import { QuestionCategoryComponent }      from './question-category/question-category.component';
+import { QuestionCategoryCreateComponent } from './question-category/question-category-create/question-category-create.component';
+import { QuestionCategoryDetailComponent } from './question-category/question-category-detail/question-category-detail.component';
+
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
   { path: 'items', component: ItemsComponent },
@@ -30,7 +33,6 @@ const routes: Routes = [
   { path: 'question-difficulties', component: QuestionDifficultyComponent },
   { path: 'question-difficulties/create', component: QuestionDifficultyCreateComponent },
   { path: 'question-difficulties/:id', component: QuestionDifficultyDetailComponent },
-  { path: 'question-categories', component: QuestionCategoryComponent },
   { path: 'learning-topics', component: LearningTopicShowComponent },
   { path: 'items/create', component: ItemCreateComponent },
   { path: 'challenges', component: ChallengeIndexComponent },
@@ -41,6 +43,10 @@ const routes: Routes = [
   { path: 'learning-items', component: LearningItemIndexComponent },
   { path: 'learning-items/:id', component: LearningItemDetailComponent },
   { path: 'learning-items-update', component: LearningItemUpdateComponent },
+
+  { path: 'question-categories', component: QuestionCategoryComponent },
+  { path: 'question-categories-create', component: QuestionCategoryCreateComponent },
+  { path: 'question-categories/:id', component: QuestionCategoryDetailComponent },
 ];
 
 @NgModule({

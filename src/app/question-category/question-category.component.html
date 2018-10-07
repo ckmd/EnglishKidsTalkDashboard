@@ -1,18 +1,17 @@
-<h2>E - Kita Question Categories</h2>
+<h2>E - Kita Question Category</h2>
 
 <table>
 	<tr>
     <th>id</th>
-    <th>category</th>
-    <th>created at</th>
-    <th>updated at</th>
+    <th>name</th>
+    <th>delete</th>
 	</tr>
-  <tr *ngFor="let category of categories">
-  	<a routerLink="/categorydetail/{{category.id}}">
-    <td>{{category.id}}</td>
-    </a>
-    <td>{{category.question_category_name}}</td>
-    <td>{{category.createdAt}}</td>
-    <td>{{category.updatedAt}}</td>
+  <tr *ngFor="let l of categories">
+    <a routerLink="/question-categories/{{l.id}}"><td>{{l.id}}</td></a>
+    <td>{{l.question_category_name}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(l)"> Delete</button>
+    </td>
   </tr>
 </table>
+<a href="question-categories-create"><button class="btn btn-success">create question Category</button></a>

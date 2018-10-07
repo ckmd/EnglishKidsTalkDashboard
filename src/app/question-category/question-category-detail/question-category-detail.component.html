@@ -1,0 +1,11 @@
+<div *ngIf="questionCategory">
+  <h2>{{questionCategory.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{questionCategory.id}}</div>
+  <div>
+    <label>learning_topic_id:
+      <input [(ngModel)]="questionCategory.question_category_name"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

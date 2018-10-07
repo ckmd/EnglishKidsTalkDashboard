@@ -15,7 +15,13 @@ public categories = [];
 
   ngOnInit() {
   	  	this.questioncategoryService.getQuestionCategories()
-  	.subscribe(data => this.categories = data);
+  	.subscribe(categories => this.categories = categories);
   }
 
+  delete(questionCategory: QuestionCategory): void {
+    this.questioncategoryService.deleteQuestionCategory(questionCategory.id)
+      .subscribe( data => {
+        this.categories = this.categories.filter(u => u !== questionCategory);
+      });
+  }
 }

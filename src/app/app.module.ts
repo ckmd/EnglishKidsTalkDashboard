@@ -40,6 +40,8 @@ import { LearningItemDetailComponent } from './learning-item/learning-item-detai
 import { LearningItemCreateComponent } from './learning-item/learning-item-create/learning-item-create.component';
 import { LearningItemUpdateComponent } from './learning-item/learning-item-update/learning-item-update.component';
 import { LearningitemService } from './service/learningitem.service';
+import { QuestionCategoryCreateComponent } from './question-category/question-category-create/question-category-create.component';
+import { QuestionCategoryDetailComponent } from './question-category/question-category-detail/question-category-detail.component';
 
 @NgModule({
   providers:[
@@ -73,6 +75,8 @@ import { LearningitemService } from './service/learningitem.service';
     LearningItemDetailComponent,
     LearningItemCreateComponent,
     LearningItemUpdateComponent,
+    QuestionCategoryCreateComponent,
+    QuestionCategoryDetailComponent,
   ],
   imports: [
     BrowserModule,
