@@ -49,6 +49,7 @@ import { QuestionCategoryDetailComponent } from './question-category/question-ca
 
 import { LearningTopicCreateComponent } from './learning-topic/learning-topic-create/learning-topic-create.component';
 import { LearningTopicDetailComponent } from './learning-topic/learning-topic-detail/learning-topic-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   providers:[
@@ -86,6 +87,7 @@ import { LearningTopicDetailComponent } from './learning-topic/learning-topic-de
     QuestionCategoryDetailComponent,
     LearningTopicCreateComponent,
     LearningTopicDetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

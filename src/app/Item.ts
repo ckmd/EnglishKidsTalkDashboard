@@ -7,7 +7,7 @@ export interface Item {
   image: string;
   x_coordinate: number;
   y_coordinate: number;
+  itemCategory: number;
   createdAt: string;
   updatedAt: string;
-  itemCategory: number;
 }

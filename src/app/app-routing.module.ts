@@ -28,14 +28,21 @@ import { LearningTopicShowComponent }      from './learning-topic/learning-topic
 import { LearningTopicCreateComponent } from './learning-topic/learning-topic-create/learning-topic-create.component';
 import { LearningTopicDetailComponent } from './learning-topic/learning-topic-detail/learning-topic-detail.component';
 
+import { LoginComponent } from './login/login.component';
+
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
-  { path: 'items', component: ItemsComponent },
-  { path: 'users', component: UserShowComponent },
-  { path: 'itemdetail/:id', component: ItemDetailComponent },
-  { path: 'userdetail/:id', component: UserDetailComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
+  { path: 'login', component: LoginComponent },
+
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'items/create', component: ItemCreateComponent },
+
+  { path: 'users', component: UserShowComponent },
+  { path: 'userdetail/:id', component: UserDetailComponent },
+
+  { path: 'items', component: ItemsComponent },
+  { path: 'items-create', component: ItemCreateComponent },
+  { path: 'itemdetail/:id', component: ItemDetailComponent },
 
   { path: 'question-difficulties', component: QuestionDifficultyComponent },
   { path: 'question-difficulties-create', component: QuestionDifficultyCreateComponent },

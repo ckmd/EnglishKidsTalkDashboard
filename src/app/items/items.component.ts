@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../item';
-import { ItemService } from '../item.service';
 import { ItemsService } from '../service/items.service';
-import { RouterModule, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
-  // templateUrl: `      `,
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
