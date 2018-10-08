@@ -10,9 +10,9 @@
     <a routerLink="/question-difficulties/{{level.id}}"><td>{{level.id}}</td></a>
     <td>{{level.question_difficulty_name}}</td>
     <td>
-      <button class="btn btn-danger" (click)="deleteQuestionDifficulty(level)"> Delete</button>
+      <button class="btn btn-danger" (click)="delete(level)"> Delete</button>
     </td>
   </tr>
 </table>
-<a href="question-difficulties/create"><button class="btn btn-success">create level</button></a>
+<a href="question-difficulties-create"><button class="btn btn-success">create level</button></a>
 <!-- <app-question-difficulty-create></app-question-difficulty-create> -->

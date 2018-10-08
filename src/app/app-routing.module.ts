@@ -5,9 +5,11 @@ import { ItemsComponent }      from './items/items.component';
 import { UserDetailComponent }      from './user-detail/user-detail.component';
 import { ItemDetailComponent }      from './item-detail/item-detail.component';
 import { UserShowComponent }      from './user/user-show/user-show.component';
+
 import { QuestionDifficultyComponent }      from './question-difficulty/question-difficulty.component';
 import { QuestionDifficultyCreateComponent }      from './question-difficulty-create/question-difficulty-create.component';
 import { QuestionDifficultyDetailComponent }      from './question-difficulty-detail/question-difficulty-detail.component';
+
 import { ItemCreateComponent }      from './item/item-create/item-create.component';
 import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-index.component';
 import { ChallengeDetailComponent } from './challenge/challenge-detail/challenge-detail.component';
@@ -33,10 +35,11 @@ const routes: Routes = [
   { path: 'itemdetail/:id', component: ItemDetailComponent },
   { path: 'userdetail/:id', component: UserDetailComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'question-difficulties', component: QuestionDifficultyComponent },
-  { path: 'question-difficulties/create', component: QuestionDifficultyCreateComponent },
-  { path: 'question-difficulties/:id', component: QuestionDifficultyDetailComponent },
   { path: 'items/create', component: ItemCreateComponent },
+
+  { path: 'question-difficulties', component: QuestionDifficultyComponent },
+  { path: 'question-difficulties-create', component: QuestionDifficultyCreateComponent },
+  { path: 'question-difficulties/:id', component: QuestionDifficultyDetailComponent },
 
   { path: 'challenges', component: ChallengeIndexComponent },
   { path: 'challenges/:id', component: ChallengeDetailComponent },

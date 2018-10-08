@@ -27,12 +27,14 @@ export class LearningItemCreateComponent implements OnInit {
 		learning_item_answer: ['', Validators.required],
     });
   }
+
   onSubmit() {
     this.learningItemService.createLearningItem(this.addForm.value)
       .subscribe( data => {
       	this.goBack();
       });
   }
+
   goBack(): void {
     this.location.back();
   }

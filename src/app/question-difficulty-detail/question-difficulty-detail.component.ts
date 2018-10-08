@@ -22,18 +22,19 @@ export class QuestionDifficultyDetailComponent implements OnInit {
     this.getQuestionDifficulty();
   }
 
-    getQuestionDifficulty(): void {
+  getQuestionDifficulty(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.questionDifficultyService.getQuestionDifficulty(id)
       .subscribe(questionDifficulty => this.questionDifficulty = questionDifficulty);
-  }
-  goBack(): void {
-    this.location.back();
   }
 
  save(): void {
     this.questionDifficultyService.updateQuestionDifficulty(this.questionDifficulty)
       .subscribe(() => this.goBack());
+  }
+
+  goBack(): void {
+    this.location.back();
   }
   // onSubmit(){
   // 	this.questionDifficultyService.updateQuestionDifficulty()
