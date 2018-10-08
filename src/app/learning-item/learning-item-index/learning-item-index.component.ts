@@ -17,7 +17,6 @@ export class LearningItemIndexComponent implements OnInit {
   ngOnInit() {
   	this.learningItemService.getLearningItems()
   	.subscribe(learningItems => this.learningItems = learningItems);
-
   }
 
   delete(learningItem: LearningItem): void {
