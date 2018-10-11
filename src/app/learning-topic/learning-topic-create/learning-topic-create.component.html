@@ -1,3 +1,4 @@
+
 <h2>add Learning Topic</h2>
 <div class="col-md-6">
   <form [formGroup]="addForm">
@@ -18,8 +19,14 @@
     </div>
 
     <div class="form-group">
-      <label for="learning_topic_image">learning_topic_image :</label>
-      <input type="learning_topic_image" formControlName="learning_topic_image" name="learning_topic_image" class="form-control" id="learning_topic_image">
+      <label >learning_topic_image :</label>
+<!--       <input type="learning_topic_image" formControlName="learning_topic_image" name="learning_topic_image" class="form-control" id="learning_topic_image"> -->
+    <input type="file" (change)="onFileChanged($event)">
+<!--     <input 
+      style="display: none" 
+      type="file" (change)="onFileChanged($event)"> -->
+<!--     <button (click)="fileInput.click()">Select File</button> -->
+<!--     <button (click)="onUpload()">Upload!</button> -->
     </div>
     <button (click)="onSubmit()" class="btn btn-success">Update</button>
   </form>
