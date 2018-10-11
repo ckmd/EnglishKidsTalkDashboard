@@ -23,7 +23,7 @@ export class LearningTopicCreateComponent implements OnInit {
 
   ngOnInit() {
   	this.addForm = this.formBuilder.group({
-	    id: [],
+	  id: [],
 		question_difficulty_id: ['', Validators.required],
 		question_category_id: ['', Validators.required],
 		learning_topic_name: ['', Validators.required],
@@ -46,6 +46,7 @@ export class LearningTopicCreateComponent implements OnInit {
   onUpload(){
     const uploadData = new FormData();
     uploadData.append('learning_topic_image', this.selectedFile, this.selectedFile.name);
+
     this.http.post('http://ekita-api.herokuapp.com/api/learning-topics', uploadData)
     .subscribe( res => {console.log(res);}
     );
