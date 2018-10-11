@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    // "start": "ng serve",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
@@ -13,11 +12,11 @@
   "postinstall": "ng build --aot --prod",
   "private": true,
   "dependencies": {
-    "@angular/cli": "~6.2.3",
-    "@angular/compiler-cli": "^6.1.0",
     "@angular/animations": "^6.1.0",
+    "@angular/cli": "~6.2.3",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
+    "@angular/compiler-cli": "^6.1.0",
     "@angular/core": "^6.1.0",
     "@angular/forms": "^6.1.0",
     "@angular/http": "^6.1.0",
@@ -26,9 +25,11 @@
     "@angular/router": "^6.1.0",
     "angular-in-memory-web-api": "^0.6.1",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
     "rxjs": "~6.2.0",
-    "zone.js": "~0.8.26",
-    "typescript": "~2.9.2"
+    "typescript": "~2.9.2",
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
@@ -39,6 +40,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
