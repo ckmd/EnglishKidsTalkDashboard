@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static('./dist/ekita-dashboard'));
+app.use(express.static('./dist'));
 
 app.get('/*all', function(req,res) {
     
