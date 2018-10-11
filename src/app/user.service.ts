@@ -1,4 +1,4 @@
-import { User } from './user';
+import { User } from './User';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';

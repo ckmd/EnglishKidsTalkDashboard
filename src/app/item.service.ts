@@ -1,4 +1,4 @@
-import { Item } from './item';
+import { Item } from './Item';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
