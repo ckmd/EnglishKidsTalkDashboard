@@ -5,6 +5,7 @@ export interface Challenge {
 	challenge_xp:number;
 	challenge_star:number;
 	challenge_image:string;
+	challenge_type:number;
 	challenge_question:string;
 	questionDifficulty:string;
 	users:string;

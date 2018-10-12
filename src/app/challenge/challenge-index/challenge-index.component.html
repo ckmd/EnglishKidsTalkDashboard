@@ -15,8 +15,8 @@
     <th>challenge_star</th>
     <th>challenge_image</th>
     <th>challenge_question</th>
+    <th>challenge_type</th>
     <th>questionDifficulty</th>
-    <th>users</th>
     <th>delete</th>
   </tr>
   <tr *ngFor="let c of challenges">
@@ -29,8 +29,8 @@
     <td>{{c.challenge_star}}</td>
     <td><img src="{{c.challenge_image}}" width="64" height="64"></td>
     <td>{{c.challenge_question}}</td>
+    <td>{{c.challenge_type}}</td>
     <td>{{c.questionDifficulty}}</td>
-    <td>{{c.users?.id}}</td>
     <td>
       <button class="btn btn-danger" (click)="delete(c)"> Delete</button>
     </td>

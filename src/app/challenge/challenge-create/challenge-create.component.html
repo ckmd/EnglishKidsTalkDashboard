@@ -17,13 +17,17 @@
     </div>
 
     <div class="form-group">
-      <label for="challenge_star">challenge_star address:</label>
+      <label for="challenge_star">challenge_star :</label>
       <input formControlName="challenge_star" placeholder="challenge_star" name="challenge_star" class="form-control" id="challenge_star">
     </div>
 
-    <div class="form-group">
+<!--     <div class="form-group">
       <label for="challenge_image">challenge_image:</label>
       <input formControlName="challenge_image" placeholder="challenge_image" name="challenge_image" class="form-control" id="challenge_image">
+    </div> -->
+    <div class="form-group">
+      <label >challenge_image :</label>    
+      <input type="file" (change)="onFileChanged($event)">
     </div>
 
     <div class="form-group">
@@ -32,15 +36,15 @@
     </div>
 
     <div class="form-group">
-      <label for="questionDifficulty">questionDifficulty:</label>
-      <input formControlName="questionDifficulty" placeholder="questionDifficulty" name="questionDifficulty" class="form-control" id="questionDifficulty">
+      <label for="challenge_type">challenge_type:</label>
+      <input formControlName="challenge_type" placeholder="challenge_type" name="challenge_type" class="form-control" id="challenge_type">
     </div>
 
     <div class="form-group">
-      <label for="users">users:</label>
-      <input formControlName="users" placeholder="users" name="users" class="form-control" id="users">
+      <label for="questionDifficulty">questionDifficulty:</label>
+      <input formControlName="questionDifficulty" placeholder="questionDifficulty" name="questionDifficulty" class="form-control" id="questionDifficulty">
     </div>
     
-    <button (click)="onSubmit()" class="btn btn-success">Update</button>
+    <button (click)="onUpload()" class="btn btn-success">Update</button>
   </form>
 </div>
