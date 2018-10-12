@@ -4,21 +4,17 @@
 	<tr>
     <th>id</th>
     <th>topic id</th>
-    <th>item id</th>
+    <th>item xp</th>
     <th>title</th>
     <th>image</th>
-    <th>soung</th>
-    <th>answer</th>
     <th>delete</th>
 	</tr>
   <tr *ngFor="let l of learningItems">
     <a routerLink="/learning-items/{{l.id}}"><td>{{l.id}}</td></a>
     <td>{{l.learning_topic_id}}</td>
-    <td>{{l.learning_item_id}}</td>
+    <td>{{l.learning_item_xp}}</td>
     <td>{{l.learning_item_title}}</td>
-    <td>{{l.learning_item_image}}</td>
-    <td>{{l.learning_item_sound}}</td>
-    <td>{{l.learning_item_answer}}</td>
+    <td><img src="{{l.learning_item_image}}" width="64" height="64"></td>
     <td>
       <button class="btn btn-danger" (click)="delete(l)"> Delete</button>
     </td>

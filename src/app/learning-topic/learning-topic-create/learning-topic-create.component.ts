@@ -49,7 +49,7 @@ export class LearningTopicCreateComponent implements OnInit {
     uploadData.append('learning_topic_image', this.selectedFile, this.selectedFile.name);
 
     this.http.post('http://ekita-api.herokuapp.com/api/learning-topics', uploadData)
-    .subscribe( res => {console.log(res);}
+    .subscribe( res => {console.log(res); this.goBack();}
     );
   }
 }
