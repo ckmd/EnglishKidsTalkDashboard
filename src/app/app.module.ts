@@ -90,6 +90,7 @@ import { LoginComponent } from './login/login.component';
     LoginComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
