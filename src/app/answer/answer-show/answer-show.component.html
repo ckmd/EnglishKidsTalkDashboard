@@ -1,0 +1,30 @@
+<h2>My Answers</h2>
+
+<div><!--   (click) passes input value to add() and then clears the input -->
+  <button routerLink="/answers-create">
+    add
+  </button>
+</div>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>challenge_id</th>
+    <th>answer_text</th>
+    <th>is_correct</th>
+    <th>challenge</th>
+    <th>delete</th>
+  </tr>
+  <tr *ngFor="let c of answers">
+    <a routerLink="/answers/{{c.id}}">
+    <td>{{c.id}}</td>
+    </a>
+    <td>{{c.challenge_id}}</td>
+    <td>{{c.answer_text}}</td>
+    <td>{{c.is_correct}}</td>
+    <td>{{c.challenge?.challenge_question}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(c)"> Delete</button>
+    </td>
+  </tr>
+</table>

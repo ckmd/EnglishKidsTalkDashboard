@@ -30,6 +30,9 @@ import { LearningTopicDetailComponent } from './learning-topic/learning-topic-de
 
 import { LoginComponent } from './login/login.component';
 
+import { AnswerCreateComponent } from './answer/answer-create/answer-create.component';
+import { AnswerShowComponent } from './answer/answer-show/answer-show.component';
+
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -65,6 +68,8 @@ const routes: Routes = [
   { path: 'learning-topics-create', component: LearningTopicCreateComponent },
   { path: 'learning-topics/:id', component: LearningTopicDetailComponent },
 
+  { path: 'answers', component: AnswerShowComponent },
+  { path: 'answers-create', component: AnswerCreateComponent },
 ];
 
 @NgModule({

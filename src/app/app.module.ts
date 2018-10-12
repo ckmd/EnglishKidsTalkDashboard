@@ -50,6 +50,8 @@ import { QuestionCategoryDetailComponent } from './question-category/question-ca
 import { LearningTopicCreateComponent } from './learning-topic/learning-topic-create/learning-topic-create.component';
 import { LearningTopicDetailComponent } from './learning-topic/learning-topic-detail/learning-topic-detail.component';
 import { LoginComponent } from './login/login.component';
+import { AnswerCreateComponent } from './answer/answer-create/answer-create.component';
+import { AnswerShowComponent } from './answer/answer-show/answer-show.component';
 
 @NgModule({
   providers:[
@@ -88,6 +90,8 @@ import { LoginComponent } from './login/login.component';
     LearningTopicCreateComponent,
     LearningTopicDetailComponent,
     LoginComponent,
+    AnswerCreateComponent,
+    AnswerShowComponent,
   ],
   imports: [
     ReactiveFormsModule,
