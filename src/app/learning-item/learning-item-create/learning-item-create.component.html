@@ -4,11 +4,11 @@
     <div class="form-group">
       <label>learning_topic_id </label>
       <input type="text" formControlName="learning_topic_id" class="form-control">
-      <select>
-        <option *ngFor="let l of learningTopics">
-          {{l?.id}}
+      <!-- <select>
+        <option *ngFor="let l of learningTopics" name="learning_topic_id" value="{{l?.id}}">
+          {{l?.learning_topic_name}}
         </option>
-      </select>
+      </select> -->
     </div>
 
     <div class="form-group">
@@ -23,7 +23,7 @@
     
     <div class="form-group">
       <label>learning_item_image </label>    
-      <input type="file" (change)="onFileChanged($event)">
+      <input type="file" (change)="onFileChanged($event)" class="form-control">
     </div>
     <button (click)="onUpload()" class="btn btn-success">Update</button>
   </form>
