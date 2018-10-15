@@ -1,5 +1,5 @@
 <h2>E - Kita Question Category</h2>
-
+<a href="question-categories-create"><button class="btn btn-success ml-2">create question Category</button></a>
 <table>
 	<tr>
     <th>id</th>
@@ -10,8 +10,8 @@
     <a routerLink="/question-categories/{{l.id}}"><td>{{l.id}}</td></a>
     <td>{{l.question_category_name}}</td>
     <td>
-      <button class="btn btn-danger" (click)="delete(l)"> Delete</button>
+        <button class="btn btn-primary" type="submit"> Update</button>
+        <button class="btn btn-danger ml-2" type="submit" (click)="delete(l)"> Delete</button>
     </td>
   </tr>
 </table>
-<a href="question-categories-create"><button class="btn btn-success">create question Category</button></a>
