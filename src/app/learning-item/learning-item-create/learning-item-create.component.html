@@ -1,23 +1,28 @@
-<h2>add Learning Item</h2>
-<div class="col-md-6">
+<div class="container-fluid">
+  <h2>add Learning Item</h2>
   <form [formGroup]="addForm">
     <div class="form-group">
-      <label for="learning_topic_id">learning_topic_id :</label>
-      <input type="learning_topic_id" formControlName="learning_topic_id" name="learning_topic_id" class="form-control" id="learning_topic_id">
+      <label>learning_topic_id </label>
+      <input type="text" formControlName="learning_topic_id" class="form-control">
+      <select>
+        <option *ngFor="let l of learningTopics">
+          {{l?.id}}
+        </option>
+      </select>
     </div>
 
     <div class="form-group">
-      <label for="learning_item_xp">learning_item_xp :</label>
-      <input type="" formControlName="learning_item_xp" name="learning_item_xp" class="form-control" id="learning_item_xp">
+      <label>learning_item_xp </label>
+      <input type="text" formControlName="learning_item_xp" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="learning_item_title">learning_item_title :</label>
-      <input type="learning_item_title" formControlName="learning_item_title" name="learning_item_title" class="form-control" id="learning_item_title">
+      <label>learning_item_title </label>
+      <input type="text" formControlName="learning_item_title" class="form-control">
     </div>
     
     <div class="form-group">
-      <label >learning_item_image :</label>    
+      <label>learning_item_image </label>    
       <input type="file" (change)="onFileChanged($event)">
     </div>
     <button (click)="onUpload()" class="btn btn-success">Update</button>

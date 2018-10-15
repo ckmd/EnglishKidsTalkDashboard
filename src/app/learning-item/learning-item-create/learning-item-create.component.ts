@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { LearningitemService } from '../../service/learningitem.service';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { LearningtopicService } from 'src/app/service/learningtopic.service';
 
 @Component({
   selector: 'app-learning-item-create',
@@ -13,14 +14,19 @@ export class LearningItemCreateComponent implements OnInit {
 
   constructor(
   	private formBuilder: FormBuilder,
-  	private learningItemService: LearningitemService, 
+    private learningItemService: LearningitemService,
+    private learningTopicService : LearningtopicService, 
   	private location : Location,
     private http : HttpClient) { }
 
   addForm: FormGroup;
   selectedFile: File = null;
+  public learningTopics = [];
   
   ngOnInit() {
+    this.learningTopicService.getLearningTopics()
+    .subscribe(learningTopics => this.learningTopics = learningTopics);
+
   	this.addForm = this.formBuilder.group({
     id: [],
 		learning_topic_id: ['', Validators.required],
