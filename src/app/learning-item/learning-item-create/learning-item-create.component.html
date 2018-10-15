@@ -3,12 +3,12 @@
   <form [formGroup]="addForm">
     <div class="form-group">
       <label>learning_topic_id </label>
-      <input type="text" formControlName="learning_topic_id" class="form-control">
-      <!-- <select>
-        <option *ngFor="let l of learningTopics" name="learning_topic_id" value="{{l?.id}}">
-          {{l?.learning_topic_name}}
+      <!-- <input type="text" formControlName="learning_topic_id" class="form-control"> -->
+      <select formControlName="learning_topic_id" class="form-control">
+        <option *ngFor="let l of learningTopics"  value="{{l.id}}">
+          {{l.learning_topic_name}}
         </option>
-      </select> -->
+      </select>
     </div>
 
     <div class="form-group">

@@ -4,6 +4,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { ChallengeService } from '../../service/challenge.service';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { QuestioncategoryService } from 'src/app/service/questioncategory.service';
+import { QuestionDifficultyService } from 'src/app/service/questiondifficulty.service';
 
 @Component({
   selector: 'app-challenge-create',
@@ -14,17 +16,28 @@ export class ChallengeCreateComponent implements OnInit {
 
 constructor(
   private formBuilder: FormBuilder,
-  private challengeService: ChallengeService, 
+  private challengeService: ChallengeService,
+  private qd: QuestionDifficultyService,
+  private qc: QuestioncategoryService, 
   private location : Location,
   private http : HttpClient) { }
+
 	addForm: FormGroup;
   selectedFile: File = null;
-  
+  public questionDifficulties = [];
+  public questionCategories = [];
+
   ngOnInit() {
+    this.qd.getQuestionDifficulties()
+    .subscribe(questionDifficulties => this.questionDifficulties = questionDifficulties);
+
+    this.qc.getQuestionCategories()
+    .subscribe(questionCategories => this.questionCategories = questionCategories);
+
   	this.addForm = this.formBuilder.group({
 	    id: [],
-		question_category_id: ['', Validators.required],
-		question_difficulty_id: ['', Validators.required],
+      question_difficulty_id: ['', Validators.required],
+      question_category_id: ['', Validators.required],
 		challenge_xp: ['', Validators.required],
 		challenge_star: ['', Validators.required],
     challenge_type: ['', Validators.required],

@@ -1,42 +1,34 @@
 <h2>My Challenges</h2>
-
-<div><!--   (click) passes input value to add() and then clears the input -->
-  <button routerLink="/challenges-create">
-    add
-  </button>
-</div>
-
-<table>
-  <tr>
-    <th>id</th>
-    <th>question_category_id</th>
-    <th>question_difficulty_id</th>
-    <th>challenge_xp</th>
-    <th>challenge_star</th>
-    <th>challenge_image</th>
-    <th>challenge_question</th>
-    <th>challenge_type</th>
-    <th>questionDifficulty</th>
-    <th>delete</th>
-  </tr>
-  <tr *ngFor="let c of challenges">
-    <a routerLink="/challenges/{{c.id}}">
-    <td>{{c.id}}</td>
-    </a>
-    <td>{{c.question_category_id}}</td>
-    <td>{{c.question_difficulty_id}}</td>
-    <td>{{c.challenge_xp}}</td>
-    <td>{{c.challenge_star}}</td>
-    <td><img src="{{c.challenge_image}}" width="64" height="64"></td>
-    <td>{{c.challenge_question}}</td>
-    <td>{{c.challenge_type}}</td>
-    <td>{{c.questionDifficulty?.question_difficulty_name}}</td>
-    <td>
-      <button class="btn btn-danger" (click)="delete(c)"> Delete</button>
-    </td>
-  </tr>
-</table>
-
+<a href="challenges-create"><button class="btn btn-success ml-2">create challenge</button></a>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>question Difficulty</th> 
+      <th>question category</th>
+      <th>xp</th>
+      <th>star</th>
+      <th>image</th>
+      <th>question</th>
+      <th>type</th>
+      <th>action</th>
+    </tr>
+    <tr *ngFor="let c of challenges">
+      <a routerLink="/challenges/{{c.id}}">
+        <td>{{c.id}}</td>
+      </a>
+      <td>{{c.questionDifficulty?.question_difficulty_name}}</td>
+      <td>{{c.question_category_id}}</td>
+      <td>{{c.challenge_xp}}</td>
+      <td>{{c.challenge_star}}</td>
+      <td><img src="{{c.challenge_image}}" width="64" height="64"></td>
+      <td>{{c.challenge_question}}</td>
+      <td>{{c.challenge_type}}</td>
+      <td>
+          <button class="btn btn-primary" type="submit">Update</button>
+          <button class="btn btn-danger ml-2" type="submit" (click)="delete(c)">Delete</button>
+      </td>
+    </tr>
+  </table>
 <!-- 
 Copyright 2017-2018 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

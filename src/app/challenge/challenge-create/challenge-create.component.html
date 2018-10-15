@@ -1,50 +1,61 @@
-<div class="col-md-6">
+<div class="container-fluid">
   <h2 class="text-center">Add Challenge</h2>
   <form [formGroup]="addForm">
+
     <div class="form-group">
-      <label for="question_category_id">question_category_id:</label>
-      <input formControlName="question_category_id" placeholder="question_category_id" name="question_category_id" name="question_category_id" class="form-control" id="question_category_id">
+      <label>question_difficulty_id</label>
+      <!-- <input formControlName="question_difficulty_id" class="form-control" type="text"> -->
+      <select formControlName="question_difficulty_id" class="form-control">
+          <option *ngFor="let qd of questionDifficulties" value="{{qd.id}}">
+            {{qd.question_difficulty_name}}
+          </option>
+        </select>
     </div>
 
     <div class="form-group">
-      <label for="question_difficulty_id">question_difficulty_id:</label>
-      <input formControlName="question_difficulty_id" placeholder="question_difficulty_id" name="question_difficulty_id" class="form-control" id="question_difficulty_id">
+      <label>question_category_id</label>
+      <select formControlName="question_category_id" class="form-control">
+        <option *ngFor="let q of questionCategories" value="{{q.id}}">
+          {{q.question_category_name}}
+        </option>
+      </select>
+      <!-- <input formControlName="question_category_id" type="text" class="form-control"> -->
     </div>
 
     <div class="form-group">
-      <label for="challenge_xp">challenge_xp:</label>
-      <input formControlName="challenge_xp" placeholder="challenge_xp" name="challenge_xp" class="form-control" id="challenge_xp">
+      <label>challenge_xp</label>
+      <input type="text" formControlName="challenge_xp" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="challenge_star">challenge_star :</label>
-      <input formControlName="challenge_star" placeholder="challenge_star" name="challenge_star" class="form-control" id="challenge_star">
+      <label>challenge_star </label>
+      <input type="text" formControlName="challenge_star" class="form-control">
     </div>
 
-<!--     <div class="form-group">
+    <!--     <div class="form-group">
       <label for="challenge_image">challenge_image:</label>
       <input formControlName="challenge_image" placeholder="challenge_image" name="challenge_image" class="form-control" id="challenge_image">
     </div> -->
     <div class="form-group">
-      <label >challenge_image :</label>    
-      <input type="file" (change)="onFileChanged($event)">
+      <label>challenge_image </label>
+      <input type="file" (change)="onFileChanged($event)" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="challenge_question">challenge_question:</label>
-      <input formControlName="challenge_question" placeholder="challenge_question" name="challenge_question" class="form-control" id="challenge_question">
+      <label>challenge_question</label>
+      <input formControlName="challenge_question" class="form-control" type="text">
     </div>
 
     <div class="form-group">
-      <label for="challenge_type">challenge_type:</label>
-      <input formControlName="challenge_type" placeholder="challenge_type" name="challenge_type" class="form-control" id="challenge_type">
+      <label>challenge_type</label>
+      <input formControlName="challenge_type" class="form-control" type="text">
     </div>
 
     <div class="form-group">
-      <label for="questionDifficulty">questionDifficulty:</label>
-      <input formControlName="questionDifficulty" placeholder="questionDifficulty" name="questionDifficulty" class="form-control" id="questionDifficulty">
+      <label>questionDifficulty</label>
+      <input formControlName="questionDifficulty" class="form-control" type="text">
     </div>
-    
-    <button (click)="onUpload()" class="btn btn-success">Update</button>
+
+    <button (click)="onUpload()" class="btn btn-success">Create</button>
   </form>
 </div>

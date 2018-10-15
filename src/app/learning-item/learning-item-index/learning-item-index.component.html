@@ -1,5 +1,5 @@
 <h2>E - Kita learning Items</h2>
-
+<a href="learning-items-create"><button class="btn btn-success ml-2">create learning item</button></a>
 <table>
 	<tr>
     <th>id</th>
@@ -7,7 +7,7 @@
     <th>item xp</th>
     <th>title</th>
     <th>image</th>
-    <th>delete</th>
+    <th>Action</th>
 	</tr>
   <tr *ngFor="let l of learningItems">
     <a routerLink="/learning-items/{{l.id}}"><td>{{l.id}}</td></a>
@@ -16,8 +16,8 @@
     <td>{{l.learning_item_title}}</td>
     <td><img src="{{l.learning_item_image}}" width="64" height="64"></td>
     <td>
-      <button class="btn btn-danger" (click)="delete(l)"> Delete</button>
-    </td>
+      <button class="btn btn-primary" type="submit">Update</button>
+      <button class="btn btn-danger ml-2" type="submit" (click)="delete(l)">Delete</button>
+</td>
   </tr>
 </table>
-<a href="learning-items-create"><button class="btn btn-success">create learning item</button></a>
