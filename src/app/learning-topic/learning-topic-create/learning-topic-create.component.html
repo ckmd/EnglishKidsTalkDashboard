@@ -1,28 +1,28 @@
 
 <h2>add Learning Topic</h2>
-<div class="col-md-6">
+<div class="container-fluid">
   <form [formGroup]="addForm">
     
     <div class="form-group">
-      <label for="question_category_id">question_category_id :</label>
-      <input type="question_category_id" formControlName="question_category_id" name="question_category_id" class="form-control" id="question_category_id">
+      <label>question category id </label>
+      <input type="text" formControlName="question_category_id" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="learning_topic_name">learning_topic_name :</label>
-      <input type="learning_topic_name" formControlName="learning_topic_name" name="learning_topic_name" class="form-control" id="learning_topic_name">
+      <label>learning topic name </label>
+      <input type="text" formControlName="learning_topic_name" class="form-control">
     </div>
 
     <div class="form-group">
-      <label >learning_topic_image :</label>
+      <label>learning_topic_image</label>
 <!--       <input type="learning_topic_image" formControlName="learning_topic_image" name="learning_topic_image" class="form-control" id="learning_topic_image"> -->
-    <input type="file" (change)="onFileChanged($event)">
+    <input type="file" (change)="onFileChanged($event)" class="form-control">
 <!--     <input 
       style="display: none" 
       type="file" (change)="onFileChanged($event)"> -->
 <!--     <button (click)="fileInput.click()">Select File</button> -->
 <!--     <button (click)="onUpload()">Upload!</button> -->
     </div>
-    <button (click)="onUpload()" class="btn btn-success">Update</button>
+    <button (click)="onUpload()" class="btn btn-success">Create</button>
   </form>
 </div>

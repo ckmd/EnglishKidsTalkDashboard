@@ -1,23 +1,23 @@
 <h2>E - Kita Learning Topic</h2>
-
+<a href="learning-topics-create"><button class="btn btn-success ml-2">create learning topic</button></a>
 <table>
 	<tr>
     <th>id</th>
-    <th>question category id</th>
-    <th>learning topic name</th>
-    <th>learning topic image</th>
+    <th>question category</th>
+    <th>name</th>
+    <th>image</th>
     <th>action</th>
 	</tr>
   <tr *ngFor="let topic of topics">
   	<a routerLink="/learning-topics/{{topic.id}}">
     <td>{{topic.id}}</td>
     </a>
-    <td>{{topic.question_category_id}}</td>
+    <td>{{topic.questionCategory?.question_category_name}}</td>
     <td>{{topic.learning_topic_name}}</td>
     <td><img src="{{topic.learning_topic_image}}" width="64" height="64"></td>
      <td>
-      <button class="btn btn-danger" (click)="delete(topic)"> Delete</button>
+        <button class="btn btn-primary" > Update</button>
+        <button class="btn btn-danger ml-2" (click)="delete(topic)"> Delete</button>
     </td>
   </tr>
 </table>
-<a href="learning-topics-create"><button class="btn btn-success">create learning topic</button></a>
