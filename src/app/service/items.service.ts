@@ -12,19 +12,19 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ItemsService {
-	private url = 'http://ekita-api.herokuapp.com/api/items';
-    
-    constructor(private http : HttpClient){
-    }
-    public getItems(): Observable<Item[]>{
-    	return this.http.get<Item[]>(this.url);
-    }
+  private url = 'http://ekita-api.herokuapp.com/api/items';
+
+  constructor(private http: HttpClient) {
+  }
+  public getItems(): Observable<Item[]> {
+    return this.http.get<Item[]>(this.url);
+  }
   createItem(learningItem: Item) {
     return this.http.post<Item>(this.url, learningItem);
   }
 
-    deleteItem(id: number) {
-        return this.http.delete(this.url + '/' + id);
+  deleteItem(id: number) {
+    return this.http.delete(this.url + '/' + id);
   }
   getItem(id: number): Observable<Item> {
     const url = `${this.url}/${id}`;
@@ -33,13 +33,13 @@ export class ItemsService {
       catchError(this.handleError<Item>(`getItem id=${id}`))
     );
   }
-  updateItem (learningItem: Item): Observable<any> {
-    return this.http.put(this.url+'/'+learningItem.id, learningItem, httpOptions).pipe(
+  updateItem(learningItem: Item): Observable<any> {
+    return this.http.put(this.url + '/' + learningItem.id, learningItem, httpOptions).pipe(
       tap(_ => this.log(`updated learningItem id=${learningItem.id}`)),
       catchError(this.handleError<any>('updateItem'))
     );
   }
-    private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
@@ -52,7 +52,7 @@ export class ItemsService {
       return of(result as T);
     };
   }
-    private log(message: string) {
+  private log(message: string) {
   }
 
 }

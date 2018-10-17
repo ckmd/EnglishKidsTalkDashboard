@@ -1,22 +1,37 @@
 <h2>E - Kita Users</h2>
 
 <table>
-	<tr>
+  <tr>
     <th>id</th>
-    <th>profile_id</th>
     <th>inventory_id</th>
     <th>name</th>
     <th>username</th>
     <th>password</th>
-	</tr>
+    <th>gender</th>
+    <th>star_gained</th>
+    <th>xp_gained</th>
+    <th>action</th>
+  </tr>
   <tr *ngFor="let user of users">
-  	<a routerLink="/userdetail/{{user.id}}">
-    <td>{{user.id}}</td>
+    <a routerLink="/userdetail/{{user.id}}">
+      <td>{{user.id}}</td>
     </a>
-    <td>{{user.profile_id}}</td>
     <td>{{user.inventory_id}}</td>
     <td>{{user.name}}</td>
     <td>{{user.username}}</td>
     <td>{{user.password}}</td>
+    <td>
+      <div *ngIf="user.gender==1; else elseBlock">
+        female
+      </div>
+      <ng-template #elseBlock>
+        male
+      </ng-template>
+    </td>
+    <td>{{user.star_gained}}</td>
+    <td>{{user.xp_gained}}</td>
+    <td>
+      <button type="submit" class="btn btn-danger ml-2" (click)="deleteUser(user)"> Delete</button>
+    </td>
   </tr>
 </table>

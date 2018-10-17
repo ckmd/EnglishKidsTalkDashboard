@@ -11,13 +11,20 @@ import { Observable } from 'rxjs';
 })
 export class UserShowComponent implements OnInit {
 
-	public users = [];
+  public users = [];
   constructor(private userService : UserService) {
    }
 
   ngOnInit() {
   	this.userService.getUsers()
   	.subscribe(data => this.users = data);
+  }
+
+  deleteUser(user: User): void {
+    this.userService.deleteUser(user.id)
+      .subscribe( data => {
+        this.users = this.users.filter(u => u !== user);
+      });
   }
 
 }

@@ -7,12 +7,15 @@ import { User } from '../model/User';
   providedIn: 'root'
 })
 export class UserService {
-	private url = 'http://ekita-api.herokuapp.com/api/users';
-    
-    constructor(private http : HttpClient){
-    }
+  private url = 'http://ekita-api.herokuapp.com/api/users';
 
-    public getUsers(): Observable<User[]>{
-    	return this.http.get<User[]>(this.url);
-    }
+  constructor(private http: HttpClient) {
+  }
+
+  public getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.url);
+  }
+  deleteUser(id: number) {
+    return this.http.delete(this.url + '/' + id);
+  }
 }
