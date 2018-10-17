@@ -5,8 +5,7 @@ export interface Item {
   item_desc: string;
   star: number;
   image: string;
-  x_coordinate: number;
-  y_coordinate: number;
+  snippet: string;
   itemCategory: number;
   createdAt: string;
   updatedAt: string;

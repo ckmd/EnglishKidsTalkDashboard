@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Location } from '@angular/common';
 import { ItemsService } from '../../service/items.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-item-create',
@@ -10,34 +11,59 @@ import { ItemsService } from '../../service/items.service';
 })
 export class ItemCreateComponent implements OnInit {
 
-	addForm: FormGroup;
+  addForm: FormGroup;
+  selectedImage: File = null;
+  selectedSnippet: File = null;
 
   constructor(
-    private itemsService : ItemsService,
+    private itemsService: ItemsService,
     private formBuilder: FormBuilder,
-    private location : Location
-) { }
+    private location: Location,
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
-  	  this.addForm = this.formBuilder.group({
+    this.addForm = this.formBuilder.group({
       id: [],
       item_category_id: ['', Validators.required],
       name: ['', Validators.required],
       item_desc: ['', Validators.required],
       star: ['', Validators.required],
-      image: ['', Validators.required],
-      x_coordinate: ['', Validators.required],
-      y_coordinate: ['', Validators.required],
       itemCategory: ['', Validators.required],
+      // inventories: [''],
     });
   }
-    onSubmit() {
+  onSubmit() {
     this.itemsService.createItem(this.addForm.value)
-      .subscribe( data => {
-      	this.goBack();
+      .subscribe(data => {
+        this.goBack();
       });
   }
   goBack(): void {
     this.location.back();
   }
+  uploadImage(event) {
+    this.selectedImage = event.target.files[0];
+    console.log(event);
+  }
+  uploadSnippet(event) {
+    this.selectedSnippet = event.target.files[0];
+    console.log(event);
+  }
+  onUpload(){
+    const uploadData = new FormData();
+    uploadData.append('item_category_id', this.addForm.get('item_category_id').value);
+    uploadData.append('name', this.addForm.get('name').value);
+    uploadData.append('item_desc', this.addForm.get('item_desc').value);
+    uploadData.append('star', this.addForm.get('star').value);
+    uploadData.append('itemCategory', this.addForm.get('itemCategory').value);
+    // uploadData.append('inventories', this.addForm.get('inventories').value);
+    uploadData.append('image', this.selectedImage, this.selectedImage.name);
+    uploadData.append('snippet', this.selectedSnippet, this.selectedSnippet.name);
+
+    this.http.post('http://ekita-api.herokuapp.com/api/items', uploadData)
+    .subscribe( res => {console.log(res); this.goBack();}
+    );
+  }
+
 }

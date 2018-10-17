@@ -6,10 +6,10 @@
       <label>question_difficulty_id</label>
       <!-- <input formControlName="question_difficulty_id" class="form-control" type="text"> -->
       <select formControlName="question_difficulty_id" class="form-control">
-          <option *ngFor="let qd of questionDifficulties" value="{{qd.id}}">
-            {{qd.question_difficulty_name}}
-          </option>
-        </select>
+        <option *ngFor="let qd of questionDifficulties" value="{{qd.id}}">
+          {{qd.question_difficulty_name}}
+        </option>
+      </select>
     </div>
 
     <div class="form-group">

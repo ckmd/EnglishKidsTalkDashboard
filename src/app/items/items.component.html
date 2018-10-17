@@ -1,40 +1,32 @@
 <h2>E - Kita Items</h2>
-<!-- <h2>items</h2>
-    <ul *ngFor="let i of items">
-    <li>{{i.name}}</li>
-    </ul> -->
-
+<a href="items-create"><button class="btn btn-success ml-2">create item</button></a>
 <table>
 	<tr>
     <th>id</th>
-    <th>item_category_id</th>
     <th>name</th>
     <th>item_desc</th>
     <th>star</th>
     <th>image</th>
-    <th>x_coordinate</th>
-    <th>y_coordinate</th>
+    <th>snippet</th>
     <th>item Category</th>
-    <th>delete</th>
+    <th>action</th>
 	</tr>
   <tr *ngFor="let item of items">
   	<a routerLink="/itemdetail/{{item.id}}">
     <td>{{item.id}}</td>
     </a>
-    <td>{{item.item_category_id}}</td>
     <td>{{item.name}}</td>
     <td>{{item.item_desc}}</td>
     <td>{{item.star}}</td>
-    <td>{{item.image}}</td>
-    <td>{{item.x_coordinate}}</td>
-    <td>{{item.y_coordinate}}</td>
-    <td>{{item.itemCategory?.id}}</td>
+    <td><img height="64" width="64" src="{{item.image}}"></td>
+    <td><img height="64" width="64" src="{{item.snippet}}"></td>
+    <td>{{item.itemCategory?.item_category_name}}</td>
     <td>
-      <button class="btn btn-danger" (click)="deleteItem(item)"> Delete</button>
+      <button class="btn btn-primary"> Update</button>
+      <button class="btn btn-danger ml-2" (click)="deleteItem(item)"> Delete</button>
     </td>
   </tr>
 </table>
-<a href="items-create"><button class="btn btn-success">create item</button></a>
 <!-- <p>
 Let's update the item component
 </p>
