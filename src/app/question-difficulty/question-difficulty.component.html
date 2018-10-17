@@ -4,13 +4,14 @@
 	<tr>
     <th>id</th>
     <th>difficulty</th>
-    <th>delete</th>
+    <th>Action</th>
 	</tr>
   <tr *ngFor="let level of levels">
     <a routerLink="/question-difficulties/{{level.id}}"><td>{{level.id}}</td></a>
     <td>{{level.question_difficulty_name}}</td>
     <td>
-      <button class="btn btn-danger" (click)="delete(level)"> Delete</button>
+      <button class="btn btn-primary"> Update</button>
+      <button class="btn btn-danger ml-2" (click)="delete(level)"> Delete</button>
     </td>
   </tr>
 </table>

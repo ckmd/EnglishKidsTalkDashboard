@@ -1,12 +1,12 @@
 <h2>add Question Difficulty</h2>
-<div class="col-md-6">
+<div class="container-fluid">
   <form [formGroup]="addForm">
     <div class="form-group">
-      <label for="question_difficulty_name">Difficulty :</label>
-      <input type="question_difficulty_name" formControlName="question_difficulty_name" placeholder="Level name" name="question_difficulty_name" class="form-control" id="question_difficulty_name">
+      <label for="question_difficulty_name">Difficulty</label>
+      <input type="text" formControlName="question_difficulty_name" class="form-control">
     </div>
 
-    <button (click)="onSubmit()" class="btn btn-success">Update</button>
+    <button (click)="onSubmit()" class="btn btn-success">Create</button>
   </form>
 </div>
 <!-- method bawaan angular -->
