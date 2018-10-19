@@ -1,12 +1,12 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent }      from './dashboard/dashboard.component';
-import { ItemsComponent }      from './items/items.component';
+import { ItemsComponent }      from './item/items/items.component';
 import { UserDetailComponent }      from './user-detail/user-detail.component';
-import { ItemDetailComponent }      from './item-detail/item-detail.component';
+import { ItemDetailComponent }      from './item/item-detail/item-detail.component';
 import { UserShowComponent }      from './user/user-show/user-show.component';
 
-import { QuestionDifficultyComponent }      from './question-difficulty/question-difficulty.component';
+import { QuestionDifficultyComponent }      from './question-difficulty/question-difficulty-index/question-difficulty.component';
 import { QuestionDifficultyCreateComponent }      from './question-difficulty-create/question-difficulty-create.component';
 import { QuestionDifficultyDetailComponent }      from './question-difficulty-detail/question-difficulty-detail.component';
 
@@ -20,7 +20,7 @@ import { LearningItemDetailComponent } from './learning-item/learning-item-detai
 import { LearningItemCreateComponent } from './learning-item/learning-item-create/learning-item-create.component';
 import { LearningItemUpdateComponent } from './learning-item/learning-item-update/learning-item-update.component';
 
-import { QuestionCategoryComponent }      from './question-category/question-category.component';
+import { QuestionCategoryComponent }      from './question-category/question-category-index/question-category.component';
 import { QuestionCategoryCreateComponent } from './question-category/question-category-create/question-category-create.component';
 import { QuestionCategoryDetailComponent } from './question-category/question-category-detail/question-category-detail.component';
 

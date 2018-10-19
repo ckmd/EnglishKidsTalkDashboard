@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionDifficultyService } from '../service/questiondifficulty.service';
-import { QuestionDifficulty } from '../model/QuestionDifficulty';
+import { QuestionDifficultyService } from '../../service/questiondifficulty.service';
+import { QuestionDifficulty } from '../../model/QuestionDifficulty';
 import { Observable } from 'rxjs';
 
 @Component({

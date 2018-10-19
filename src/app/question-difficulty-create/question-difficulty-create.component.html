@@ -5,16 +5,7 @@
       <label for="question_difficulty_name">Difficulty</label>
       <input type="text" formControlName="question_difficulty_name" class="form-control">
     </div>
-
-    <button (click)="onSubmit()" class="btn btn-success">Create</button>
+    <button (click)="goBack()" class="btn btn-secondary">Back</button>
+    <button (click)="onSubmit()" class="btn btn-success ml-2">Create</button>
   </form>
 </div>
-<!-- method bawaan angular -->
-<!-- <div>
-  <label>Level name:
-    <input #levelName />
-  </label>
-  <button (click)="createQuestionDifficulty(levelName.value); levelName.value=''">
-    add
-  </button>
-</div> -->

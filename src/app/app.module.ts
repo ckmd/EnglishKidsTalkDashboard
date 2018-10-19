@@ -11,17 +11,17 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { ItemsComponent } from './items/items.component';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ItemsComponent } from './item/items/items.component';
+import { ItemDetailComponent } from './item/item-detail/item-detail.component';
 import { ItemsService } from './service/items.service';
 
 import { UserShowComponent } from './user/user-show/user-show.component';
 import { UserService } from './service/user.service';
 
-import { QuestionDifficultyComponent } from './question-difficulty/question-difficulty.component';
+import { QuestionDifficultyComponent } from './question-difficulty/question-difficulty-index/question-difficulty.component';
 import { QuestionDifficultyService } from './service/questiondifficulty.service';
 
-import { QuestionCategoryComponent } from './question-category/question-category.component';
+import { QuestionCategoryComponent } from './question-category/question-category-index/question-category.component';
 import { QuestioncategoryService } from './service/questioncategory.service';
 
 import { LearningTopicShowComponent } from './learning-topic/learning-topic-show/learning-topic-show.component';
