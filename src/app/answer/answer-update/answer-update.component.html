@@ -1,0 +1,17 @@
+<div *ngIf="answer">
+    <div><span>id: </span>{{answer.id}}</div>
+    <div>
+        <label>Challenge ID</label>
+        <input [(ngModel)]="answer.challenge_id" />
+    </div>
+    <div>
+        <label>Answer Text</label>
+        <input [(ngModel)]="answer.answer_text" />
+    </div>
+    <div>
+        <label>Is correct</label>
+        <input [(ngModel)]="answer.is_correct" />
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+</div>

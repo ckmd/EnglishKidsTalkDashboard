@@ -32,6 +32,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AnswerCreateComponent } from './answer/answer-create/answer-create.component';
 import { AnswerShowComponent } from './answer/answer-show/answer-show.component';
+import { AnswerUpdateComponent } from './answer/answer-update/answer-update.component';
 
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
@@ -70,6 +71,7 @@ const routes: Routes = [
 
   { path: 'answers', component: AnswerShowComponent },
   { path: 'answers-create', component: AnswerCreateComponent },
+  { path: 'answers/:id', component: AnswerUpdateComponent },
 ];
 
 @NgModule({

@@ -87,7 +87,7 @@ export class AnswerService {
 
   /** PUT: update the answer on the server */
   updateAnswer (answer: Answer): Observable<any> {
-    return this.http.put(this.answersUrl+'/'+answer.id, answer, httpOptions).pipe(
+    return this.http.patch(this.answersUrl+'/'+answer.id, answer, httpOptions).pipe(
       tap(_ => this.log(`updated answer id=${answer.id}`)),
       catchError(this.handleError<any>('updateAnswer'))
     );

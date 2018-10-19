@@ -13,9 +13,7 @@
       <th>action</th>
     </tr>
     <tr *ngFor="let c of challenges">
-      <a routerLink="/challenges/{{c.id}}">
         <td>{{c.id}}</td>
-      </a>
       <td>{{c.questionDifficulty?.question_difficulty_name}}</td>
       <td>{{c.question_category_id}}</td>
       <td>{{c.challenge_xp}}</td>
@@ -24,7 +22,9 @@
       <td>{{c.challenge_question}}</td>
       <td>{{c.challenge_type}}</td>
       <td>
-          <button class="btn btn-primary" type="submit">Update</button>
+          <a routerLink="/challenges/{{c.id}}">
+            <button class="btn btn-primary" type="submit">Update</button>
+          </a>
           <button class="btn btn-danger ml-2" type="submit" (click)="delete(c)">Delete</button>
       </td>
     </tr>

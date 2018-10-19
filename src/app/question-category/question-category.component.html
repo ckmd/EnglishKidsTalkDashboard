@@ -7,10 +7,12 @@
     <th>delete</th>
 	</tr>
   <tr *ngFor="let l of categories">
-    <a routerLink="/question-categories/{{l.id}}"><td>{{l.id}}</td></a>
+      <td>{{l.id}}</td>
     <td>{{l.question_category_name}}</td>
     <td>
-        <button class="btn btn-primary" type="submit"> Update</button>
+        <a routerLink="/question-categories/{{l.id}}">
+          <button class="btn btn-primary" type="submit"> Update</button>
+        </a>
         <button class="btn btn-danger ml-2" type="submit" (click)="delete(l)"> Delete</button>
     </td>
   </tr>

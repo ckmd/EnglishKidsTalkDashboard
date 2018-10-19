@@ -20,7 +20,7 @@ export class QuestionCategoryDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getQuestionCategory();
+     this.getQuestionCategory();
   }
 
   getQuestionCategory(): void {

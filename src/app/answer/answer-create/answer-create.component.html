@@ -1,20 +1,20 @@
-<div class="col-md-6">
+<div class="container-fluid">
   <h2 class="text-center">Add Answer</h2>
   <form [formGroup]="addForm">
 
     <div class="form-group">
-      <label for="challenge_id">challenge_id:</label>
-      <input formControlName="challenge_id" placeholder="challenge_id" name="challenge_id" name="challenge_id" class="form-control" id="challenge_id">
+      <label>challenge id</label>
+      <input type="text" formControlName="challenge_id" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="answer_text">answer_text:</label>
-      <input formControlName="answer_text" placeholder="answer_text" name="answer_text" class="form-control" id="answer_text">
+      <label>answer text</label>
+      <input type="text" formControlName="answer_text" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="is_correct">is_correct:</label>
-      <input formControlName="is_correct" placeholder="is_correct" name="is_correct" class="form-control" id="is_correct">
+      <label>is correct</label>
+      <input type="text" formControlName="is_correct"  class="form-control">
     </div>
 
     <button (click)="onSubmit()" class="btn btn-success">Update</button>
