@@ -3,6 +3,7 @@ import { LearningTopic } from '../../model/LearningTopic';
 import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-learning-topic-detail',
@@ -12,11 +13,14 @@ import { ActivatedRoute } from '@angular/router';
 export class LearningTopicDetailComponent implements OnInit {
 
   @Input() learningTopic: LearningTopic;
+  selectedFile: File = null;
+  public id = this.route.snapshot.paramMap.get('id');
 
   constructor(
     private route: ActivatedRoute,
-  	private learningTopicService : LearningtopicService,
-    private location: Location
+    private learningTopicService: LearningtopicService,
+    private location: Location,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -33,9 +37,21 @@ export class LearningTopicDetailComponent implements OnInit {
     this.location.back();
   }
 
- save(): void {
+  save(): void {
+    this.onUpload();
     this.learningTopicService.updateLearningTopic(this.learningTopic)
       .subscribe(() => this.goBack());
   }
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
+    console.log(event);
+  }
+  onUpload() {
+    const uploadData = new FormData();
+    uploadData.append('learning_topic_image', this.selectedFile, this.selectedFile.name);
 
+    this.http.patch('http://ekita-api.herokuapp.com/api/learning-topics/' + this.id, uploadData)
+      .subscribe(res => { console.log(res); }
+      );
+  }
 }

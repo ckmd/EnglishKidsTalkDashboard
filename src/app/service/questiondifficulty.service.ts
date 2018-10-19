@@ -45,7 +45,7 @@ export class QuestionDifficultyService {
   //     return this.http.put<any>(this.url, questionDifficulty);
   // }
   updateQuestionDifficulty (questionDifficulty: QuestionDifficulty): Observable<any> {
-    return this.http.put(this.url+'/'+questionDifficulty.id, questionDifficulty, httpOptions).pipe(
+    return this.http.patch(this.url+'/'+questionDifficulty.id, questionDifficulty, httpOptions).pipe(
       tap(_ => this.log(`updated questionDifficulty id=${questionDifficulty.id}`)),
       catchError(this.handleError<any>('updateQuestionDifficulty'))
     );

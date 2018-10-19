@@ -1,27 +1,21 @@
-<div *ngIf="learningTopic">
-  <h2>{{learningTopic.learning_topic_name | uppercase}} Details</h2>
-  <div><span>id: </span>{{learningTopic.id}}</div>
+<div *ngIf="learningTopic" class="container-fluid">
   <div>
-    <label>learning_topic_id:
-      <input [(ngModel)]="learningTopic.question_difficulty_id"/>
-    </label>
+    <h2>
+      Update Learning Topic Id : {{learningTopic.id}}
+    </h2>
   </div>
-  <div>
-    <label>learning_item_xp :
-      <input [(ngModel)]="learningTopic.question_category_id"/>
-    </label>
+  <div class="form-group">
+    <label>Question Category ID</label>
+    <input class="form-control" [(ngModel)]="learningTopic.question_category_id" />
   </div>
-    <div>
-    <label>learning_item_title:
-      <input [(ngModel)]="learningTopic.learning_topic_name"/>
-    </label>
+  <div class="form-group">
+    <label>Learning Topic Name</label>
+    <input class="form-control" [(ngModel)]="learningTopic.learning_topic_name" />
   </div>
-    <div>
-    <label>learning_item_image:
-      <input [(ngModel)]="learningTopic.learning_topic_image" />
-    </label>
+  <div class="form-group">
+    <label>Learning Topic Image</label>
+    <input class="form-control" type="file" (change)="onFileChanged($event)" class="form-control">
   </div>
-
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button class="btn btn-secondary" (click)="goBack()">go back</button>
+  <button class="btn btn-success ml-2" (click)="save()">save</button>
 </div>

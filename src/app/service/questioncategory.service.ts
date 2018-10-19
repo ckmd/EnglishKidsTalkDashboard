@@ -35,7 +35,7 @@ export class QuestioncategoryService {
     );
   }
   updateQuestionCategory (questionCategory: QuestionCategory): Observable<any> {
-    return this.http.put(this.url+'/'+questionCategory.id, questionCategory, httpOptions).pipe(
+    return this.http.patch(this.url+'/'+questionCategory.id, questionCategory, httpOptions).pipe(
       tap(_ => this.log(`updated questionCategory id=${questionCategory.id}`)),
       catchError(this.handleError<any>('updateQuestionCategory'))
     );

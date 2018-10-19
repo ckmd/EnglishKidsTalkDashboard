@@ -1,11 +1,13 @@
-<div *ngIf="questionCategory">
-  <h2>{{questionCategory.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{questionCategory.id}}</div>
+<div *ngIf="questionCategory" class="container-fluid">
   <div>
-    <label>learning_topic_id:
-      <input [(ngModel)]="questionCategory.question_category_name"/>
-    </label>
+    <h2>
+      Update Question Category : {{questionCategory.id}}
+    </h2>
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <div class="form-group">
+    <label>learning_topic_id</label>
+      <input class="form-control" [(ngModel)]="questionCategory.question_category_name"/>
+  </div>
+  <button class="btn btn-secondary" (click)="goBack()">go back</button>
+  <button class="btn btn-success ml-2" (click)="save()">save</button>
 </div>

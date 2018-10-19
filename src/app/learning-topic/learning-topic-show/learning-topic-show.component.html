@@ -1,23 +1,28 @@
 <h2>E - Kita Learning Topic</h2>
-<a href="learning-topics-create"><button class="btn btn-success ml-2">create learning topic</button></a>
+<div>
+  <!--   (click) passes input value to add() and then clears the input -->
+  <button routerLink="/learning-topics-create" class="btn btn-success ml-2">
+    add Learning Topic
+  </button>
+</div>
 <table>
-	<tr>
+  <tr>
     <th>id</th>
     <th>question category</th>
     <th>name</th>
     <th>image</th>
     <th>action</th>
-	</tr>
+  </tr>
   <tr *ngFor="let topic of topics">
-  	<a routerLink="/learning-topics/{{topic.id}}">
     <td>{{topic.id}}</td>
-    </a>
     <td>{{topic.questionCategory?.question_category_name}}</td>
     <td>{{topic.learning_topic_name}}</td>
     <td><img src="{{topic.learning_topic_image}}" width="64" height="64"></td>
-     <td>
-        <button class="btn btn-primary" > Update</button>
-        <button class="btn btn-danger ml-2" (click)="delete(topic)"> Delete</button>
+    <td>
+      <a routerLink="/learning-topics/{{topic.id}}">
+        <button class="btn btn-primary"> Update</button>
+      </a>
+      <button class="btn btn-danger ml-2" (click)="delete(topic)"> Delete</button>
     </td>
   </tr>
 </table>

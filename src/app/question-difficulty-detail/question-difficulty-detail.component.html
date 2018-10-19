@@ -1,13 +1,14 @@
-<div *ngIf="questionDifficulty">
-  <h2>{{questionDifficulty.question_difficulty_name | uppercase}} Details</h2>
-  <div><span>id: </span>{{questionDifficulty.id}}</div>
-  
+<div *ngIf="questionDifficulty" class="container-fluid">
   <div>
-    <label>question_difficulty_name :
-      <input [(ngModel)]="questionDifficulty.question_difficulty_name"/>
-    </label>
+    <h2>
+      Update Question Difficulty Id : {{questionDifficulty.id}}
+    </h2>
+  </div>
+  <div class="form-group">
+    <label>question_difficulty_name</label>
+      <input class="form-control" [(ngModel)]="questionDifficulty.question_difficulty_name"/>
   </div>
 
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button class="btn btn-secondary" (click)="goBack()">go back</button>
+  <button class="btn btn-success ml-2" (click)="save()">save</button>
 </div>

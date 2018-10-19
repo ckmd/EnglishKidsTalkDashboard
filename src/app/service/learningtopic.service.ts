@@ -34,7 +34,7 @@ export class LearningtopicService {
     );
   }
   updateLearningTopic (learningTopic: LearningTopic): Observable<any> {
-    return this.http.put(this.url+'/'+learningTopic.id, learningTopic, httpOptions).pipe(
+    return this.http.patch(this.url+'/'+learningTopic.id, learningTopic, httpOptions).pipe(
       tap(_ => this.log(`updated learningTopic id=${learningTopic.id}`)),
       catchError(this.handleError<any>('updateLearningTopic'))
     );
