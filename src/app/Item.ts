@@ -6,6 +6,7 @@ export interface Item {
   star: number;
   image: string;
   snippet: string;
+  gender: number;
   itemCategory: number;
   createdAt: string;
   updatedAt: string;

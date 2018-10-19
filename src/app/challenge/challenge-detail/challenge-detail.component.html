@@ -1,38 +1,34 @@
-<div *ngIf="challenge" class="container-fluid" id = challenge.id>
-  <div><h2>update challenge id : {{challenge.id}}</h2></div>
+<div *ngIf="challenge" class="container-fluid">
   <div>
-    <label>question_category_id:
-      <input [(ngModel)]="challenge.question_category_id"/>
-    </label>
+    <h2>update challenge id : {{challenge.id}}</h2>
   </div>
-  <div>
-    <label>question_difficulty_id :
-      <input [(ngModel)]="challenge.question_difficulty_id"/>
-    </label>
+  <div class="form-group">
+    <label>question_category_id</label>
+      <input class="form-control" [(ngModel)]="challenge.question_category_id" />
   </div>
-    <div>
-    <label>challenge_xp:
-      <input [(ngModel)]="challenge.challenge_xp"/>
-    </label>
+  <div class="form-group">
+    <label>question_difficulty_id</label>
+      <input class="form-control" [(ngModel)]="challenge.question_difficulty_id" />
   </div>
-    <div>
-    <label>challenge_star:
-      <input [(ngModel)]="challenge.challenge_star" />
-    </label>
+  <div class="form-group">
+    <label>challenge_xp</label>
+      <input class="form-control" [(ngModel)]="challenge.challenge_xp" />
   </div>
-    <div class="form-group">
-    <label>challenge_image
+  <div class="form-group">
+    <label>challenge_star</label>
+      <input class="form-control" [(ngModel)]="challenge.challenge_star" />
+  </div>
+  <div class="form-group">
+    <label>challenge_image</label>
       <!-- <input [(ngModel)]="challenge.challenge_image" /> -->
-      <input type="file" (change)="onFileChanged($event)" class="form-control">
-    </label>
+      <input class="form-control" type="file" (change)="onFileChanged($event)" class="form-control">
   </div>
-    <div>
-    <label>challenge_question:
-      <input [(ngModel)]="challenge.challenge_question" />
-    </label>
+  <div class="form-group">
+    <label>challenge_question</label>
+      <input class="form-control" [(ngModel)]="challenge.challenge_question" />
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button class="btn btn-secondary" (click)="goBack()">go back</button>
+  <button class="btn btn-success ml-2" (click)="save()">save</button>
 </div>
 
 

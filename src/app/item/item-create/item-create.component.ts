@@ -29,6 +29,7 @@ export class ItemCreateComponent implements OnInit {
       name: ['', Validators.required],
       item_desc: ['', Validators.required],
       star: ['', Validators.required],
+      gender: ['', Validators.required],
       itemCategory: ['', Validators.required],
       // inventories: [''],
     });
@@ -56,6 +57,7 @@ export class ItemCreateComponent implements OnInit {
     uploadData.append('name', this.addForm.get('name').value);
     uploadData.append('item_desc', this.addForm.get('item_desc').value);
     uploadData.append('star', this.addForm.get('star').value);
+    uploadData.append('gender', this.addForm.get('gender').value);
     uploadData.append('itemCategory', this.addForm.get('itemCategory').value);
     // uploadData.append('inventories', this.addForm.get('inventories').value);
     uploadData.append('image', this.selectedImage, this.selectedImage.name);
