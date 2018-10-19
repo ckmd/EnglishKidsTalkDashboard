@@ -48,7 +48,6 @@ export class ChallengeDetailComponent implements OnInit {
   }
   onUpload(){
     const uploadData = new FormData();
-    // uploadData.append('questionDifficulty', this.addForm.get('questionDifficulty').value);
     uploadData.append('challenge_image', this.selectedFile, this.selectedFile.name);
 
     this.http.patch('http://ekita-api.herokuapp.com/api/challenges/'+ this.id, uploadData)

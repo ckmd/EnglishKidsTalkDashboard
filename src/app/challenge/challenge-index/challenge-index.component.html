@@ -1,34 +1,38 @@
 <h2>My Challenges</h2>
-<a href="challenges-create"><button class="btn btn-success ml-2">create challenge</button></a>
-  <table>
-    <tr>
-      <th>id</th>
-      <th>question Difficulty</th> 
-      <th>question category</th>
-      <th>xp</th>
-      <th>star</th>
-      <th>image</th>
-      <th>question</th>
-      <th>type</th>
-      <th>action</th>
-    </tr>
-    <tr *ngFor="let c of challenges">
-        <td>{{c.id}}</td>
-      <td>{{c.questionDifficulty?.question_difficulty_name}}</td>
-      <td>{{c.question_category_id}}</td>
-      <td>{{c.challenge_xp}}</td>
-      <td>{{c.challenge_star}}</td>
-      <td><img src="{{c.challenge_image}}" width="64" height="64"></td>
-      <td>{{c.challenge_question}}</td>
-      <td>{{c.challenge_type}}</td>
-      <td>
-          <a routerLink="/challenges/{{c.id}}">
-            <button class="btn btn-primary" type="submit">Update</button>
-          </a>
-          <button class="btn btn-danger ml-2" type="submit" (click)="delete(c)">Delete</button>
-      </td>
-    </tr>
-  </table>
+<div>
+  <button routerLink="/challenges-create" class="btn btn-success ml-2">
+    add Challenge
+  </button>
+</div>
+<table>
+  <tr>
+    <th>id</th>
+    <th>question Difficulty</th>
+    <th>question category</th>
+    <th>xp</th>
+    <th>star</th>
+    <th>image</th>
+    <th>question</th>
+    <th>type</th>
+    <th>action</th>
+  </tr>
+  <tr *ngFor="let c of challenges">
+    <td>{{c.id}}</td>
+    <td>{{c.questionDifficulty?.question_difficulty_name}}</td>
+    <td>{{c.question_category_id}}</td>
+    <td>{{c.challenge_xp}}</td>
+    <td>{{c.challenge_star}}</td>
+    <td><img src="{{c.challenge_image}}" width="64" height="64"></td>
+    <td>{{c.challenge_question}}</td>
+    <td>{{c.challenge_type}}</td>
+    <td>
+      <a routerLink="/challenges/{{c.id}}">
+        <button class="btn btn-primary" type="submit">Update</button>
+      </a>
+      <button class="btn btn-danger ml-2" type="submit" (click)="delete(c)">Delete</button>
+    </td>
+  </tr>
+</table>
 <!-- 
 Copyright 2017-2018 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

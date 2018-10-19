@@ -36,7 +36,7 @@ export class LearningitemService {
     );
   }
   updateLearningItem (learningItem: LearningItem): Observable<any> {
-    return this.http.put(this.learningItemsUrl+'/'+learningItem.id, learningItem, httpOptions).pipe(
+    return this.http.patch(this.learningItemsUrl+'/'+learningItem.id, learningItem, httpOptions).pipe(
       tap(_ => this.log(`updated learningItem id=${learningItem.id}`)),
       catchError(this.handleError<any>('updateLearningItem'))
     );

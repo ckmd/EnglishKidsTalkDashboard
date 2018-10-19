@@ -1,36 +1,24 @@
-<div *ngIf="learningItem">
-  <h2>{{learningItem.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{learningItem.id}}</div>
+<div *ngIf="learningItem" class="container-fluid">
   <div>
-    <label>learning_topic_id:
-      <input [(ngModel)]="learningItem.learning_topic_id"/>
-    </label>
+      <h2>Update Learning Item id : {{learningItem.id}}</h2>
+</div>
+  <div class="form-group">
+    <label>learning_topic_id</label>
+    <input class="form-control" [(ngModel)]="learningItem.learning_topic_id" />
   </div>
-  <div>
-    <label>learning_item_xp :
-      <input [(ngModel)]="learningItem.learning_item_xp"/>
-    </label>
+  <div class="form-group">
+    <label>learning_item_xp</label>
+    <input class="form-control" [(ngModel)]="learningItem.learning_item_xp" />
   </div>
-    <div>
-    <label>learning_item_title:
-      <input [(ngModel)]="learningItem.learning_item_title"/>
-    </label>
+  <div class="form-group">
+    <label>learning_item_title</label>
+    <input class="form-control" [(ngModel)]="learningItem.learning_item_title" />
   </div>
-    <div>
-    <label>learning_item_image:
-      <input [(ngModel)]="learningItem.learning_item_image" />
-    </label>
-  </div>
-    <div>
-    <label>learning_item_sound:
-      <input [(ngModel)]="learningItem.learning_item_sound" />
-    </label>
-  </div>
-    <div>
-    <label>learning_item_answer:
-      <input [(ngModel)]="learningItem.learning_item_answer" />
-    </label>
-  </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <div class="form-group">
+      <label>learning_item_image</label>
+        <!-- <input [(ngModel)]="challenge.challenge_image" /> -->
+        <input class="form-control" type="file" (change)="onFileChanged($event)" class="form-control">
+    </div>
+  <button class="btn btn-secondary" (click)="goBack()">go back</button>
+  <button class="btn btn-success ml-2" (click)="save()">save</button>
 </div>
