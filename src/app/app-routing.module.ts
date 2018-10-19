@@ -46,7 +46,7 @@ const routes: Routes = [
 
   { path: 'items', component: ItemsComponent },
   { path: 'items-create', component: ItemCreateComponent },
-  { path: 'itemdetail/:id', component: ItemDetailComponent },
+  { path: 'items/:id', component: ItemDetailComponent },
 
   { path: 'question-difficulties', component: QuestionDifficultyComponent },
   { path: 'question-difficulties-create', component: QuestionDifficultyCreateComponent },
