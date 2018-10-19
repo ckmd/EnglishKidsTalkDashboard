@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { QuestionDifficultyService } from '../service/questiondifficulty.service';
-import { QuestionDifficulty } from '../model/QuestionDifficulty';
+import { QuestionDifficultyService } from '../../service/questiondifficulty.service';
+import { QuestionDifficulty } from '../../model/QuestionDifficulty';
 import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common';
 

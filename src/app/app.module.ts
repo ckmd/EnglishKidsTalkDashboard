@@ -9,8 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
-import { UsersComponent } from './users/users.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { ItemsComponent } from './item/items/items.component';
 import { ItemDetailComponent } from './item/item-detail/item-detail.component';
 import { ItemsService } from './service/items.service';
@@ -28,8 +27,8 @@ import { LearningTopicShowComponent } from './learning-topic/learning-topic-show
 import { LearningtopicService } from './service/learningtopic.service';
 import { LearningItemShowComponent } from './learning-item/learning-item-show/learning-item-show.component';
 
-import { QuestionDifficultyCreateComponent } from './question-difficulty-create/question-difficulty-create.component';
-import { QuestionDifficultyDetailComponent } from './question-difficulty-detail/question-difficulty-detail.component';
+import { QuestionDifficultyCreateComponent } from './question-difficulty/question-difficulty-create/question-difficulty-create.component';
+import { QuestionDifficultyDetailComponent } from './question-difficulty/question-difficulty-detail/question-difficulty-detail.component';
 
 import { ItemCreateComponent } from './item/item-create/item-create.component';
 
@@ -69,7 +68,6 @@ import { AnswerUpdateComponent } from './answer/answer-update/answer-update.comp
   declarations: [
     AppComponent,
     DashboardComponent,
-    UsersComponent,
     UserDetailComponent,
     ItemsComponent,
     ItemDetailComponent,

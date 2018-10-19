@@ -2,13 +2,13 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent }      from './dashboard/dashboard.component';
 import { ItemsComponent }      from './item/items/items.component';
-import { UserDetailComponent }      from './user-detail/user-detail.component';
+import { UserDetailComponent }      from './user/user-detail/user-detail.component';
 import { ItemDetailComponent }      from './item/item-detail/item-detail.component';
 import { UserShowComponent }      from './user/user-show/user-show.component';
 
 import { QuestionDifficultyComponent }      from './question-difficulty/question-difficulty-index/question-difficulty.component';
-import { QuestionDifficultyCreateComponent }      from './question-difficulty-create/question-difficulty-create.component';
-import { QuestionDifficultyDetailComponent }      from './question-difficulty-detail/question-difficulty-detail.component';
+import { QuestionDifficultyCreateComponent }      from './question-difficulty/question-difficulty-create/question-difficulty-create.component';
+import { QuestionDifficultyDetailComponent }      from './question-difficulty/question-difficulty-detail/question-difficulty-detail.component';
 
 import { ItemCreateComponent }      from './item/item-create/item-create.component';
 import { ChallengeIndexComponent } from './challenge/challenge-index/challenge-index.component';
