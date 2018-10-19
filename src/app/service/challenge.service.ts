@@ -85,7 +85,7 @@ export class ChallengeService {
 
   /** PUT: update the challenge on the server */
   updateChallenge (challenge: Challenge): Observable<any> {
-    return this.http.put(this.challengesUrl+'/'+challenge.id, challenge, httpOptions).pipe(
+    return this.http.patch(this.challengesUrl+'/'+challenge.id, challenge, httpOptions).pipe(
       tap(_ => this.log(`updated challenge id=${challenge.id}`)),
       catchError(this.handleError<any>('updateChallenge'))
     );

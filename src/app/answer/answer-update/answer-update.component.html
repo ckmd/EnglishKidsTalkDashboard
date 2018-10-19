@@ -1,17 +1,19 @@
-<div *ngIf="answer">
-    <div><span>id: </span>{{answer.id}}</div>
+<div *ngIf="answer" class="container-fluid">
     <div>
+        <h2>update answer id : {{answer.id}}</h2>
+    </div>
+    <div class="form-group">
         <label>Challenge ID</label>
-        <input [(ngModel)]="answer.challenge_id" />
+        <input [(ngModel)]="answer.challenge_id" class="form-control" />
     </div>
-    <div>
+    <div class="form-group">
         <label>Answer Text</label>
-        <input [(ngModel)]="answer.answer_text" />
+        <input [(ngModel)]="answer.answer_text" class="form-control" />
     </div>
-    <div>
+    <div class="form-group">
         <label>Is correct</label>
-        <input [(ngModel)]="answer.is_correct" />
+        <input [(ngModel)]="answer.is_correct" class="form-control" />
     </div>
-    <button (click)="goBack()">go back</button>
-    <button (click)="save()">save</button>
+    <button class="btn btn-secondary" (click)="goBack()">go back</button>
+    <button class="btn btn-success ml-2" (click)="save()">save</button>
 </div>

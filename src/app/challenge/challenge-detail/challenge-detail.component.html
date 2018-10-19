@@ -1,6 +1,5 @@
-<div *ngIf="challenge">
-  <h2>{{challenge.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{challenge.id}}</div>
+<div *ngIf="challenge" class="container-fluid" id = challenge.id>
+  <div><h2>update challenge id : {{challenge.id}}</h2></div>
   <div>
     <label>question_category_id:
       <input [(ngModel)]="challenge.question_category_id"/>
@@ -21,9 +20,10 @@
       <input [(ngModel)]="challenge.challenge_star" />
     </label>
   </div>
-    <div>
-    <label>challenge_image:
-      <input [(ngModel)]="challenge.challenge_image" />
+    <div class="form-group">
+    <label>challenge_image
+      <!-- <input [(ngModel)]="challenge.challenge_image" /> -->
+      <input type="file" (change)="onFileChanged($event)" class="form-control">
     </label>
   </div>
     <div>
