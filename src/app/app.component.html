@@ -1,26 +1,60 @@
-<mat-sidenav-container class="example-container" >
-  <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
-  
-  <mat-sidenav-content>Main content
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<nav>
-  <a routerLink="/dashboard">Dashboard page</a>
-  <a routerLink="/users">Users page</a>
-  <a routerLink="/items">Items page</a>
-  <a routerLink="/question-difficulties">question difficulty</a>
-  <a routerLink="/question-categories">question category</a>
-  <a routerLink="/learning-topics">learning topic</a>
-  <a routerLink="/learning-items">Learning Items</a>
-  <a routerLink="/challenges">Challenges</a>
-  <a routerLink="/answers">Answers</a>
-</nav>
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+    <p><button mat-button (click)="close('toggle button')">Close</button></p>
+    {{ title }}
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/dashboard">
+          Dashboard
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/users">
+          Users
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/items">
+          Item
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/question-difficulties">
+          Question Difficulty
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/question-categories">
+          Question Category
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/learning-topics">
+          Learning Topic
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/learning-items">
+          Learning Item
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/challenges">
+          challenge
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <button mat-button routerLink="/answers">
+          Answer
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
 
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.open()">Open</button></p>
 
-<!-- <app-heroes></app-heroes> -->
-<router-outlet></router-outlet>
-</mat-sidenav-content>
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
 </mat-sidenav-container>
