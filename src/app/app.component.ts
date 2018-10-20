@@ -7,7 +7,7 @@ import {MatSidenav} from '@angular/material/sidenav';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'E-kita Admin Dashboard';
+  title = 'Copyright English Kids Talks 2018';
   @ViewChild('sidenav') sidenav: MatSidenav;
 
   reason = '';

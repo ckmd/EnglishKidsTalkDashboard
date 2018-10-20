@@ -1,15 +1,10 @@
 <mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
   <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
     <p><button mat-button (click)="close('toggle button')"> <i class="material-icons">
-        arrow_back
+        arrow_back 
         </i><span>close menu</span></button></p>
 
     <mat-list role="list">
-      <mat-list-item role="listitem">
-        <button mat-button>
-          {{ title }}
-        </button>
-      </mat-list-item>
       <mat-list-item role="listitem">
         <i class="material-icons">
           assessment
@@ -82,7 +77,12 @@
           Answer
         </button>
       </mat-list-item>
-    </mat-list>
+      <mat-list-item role="listitem">
+          <button mat-button>
+            {{ title }}
+          </button>
+        </mat-list-item>
+      </mat-list>
   </mat-sidenav>
 
   <mat-sidenav-content>

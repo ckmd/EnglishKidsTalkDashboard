@@ -1,24 +1,24 @@
-<h2>E - Kita Question Category</h2>
-<div>
-    <!--   (click) passes input value to add() and then clears the input -->
-    <button routerLink="/question-categories-create" class="btn btn-success ml-2">
-      add Question Category
-    </button>
-  </div>
+<div class="container">
+  <button routerLink="/question-categories-create" class="btn btn-success">
+    add Question Category
+  </button>
+  <h2>E - Kita Question Category</h2>
+
   <table>
-	<tr>
-    <th>id</th>
-    <th>name</th>
-    <th>delete</th>
-	</tr>
-  <tr *ngFor="let l of categories">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>action</th>
+    </tr>
+    <tr *ngFor="let l of categories">
       <td>{{l.id}}</td>
-    <td>{{l.question_category_name}}</td>
-    <td>
+      <td>{{l.question_category_name}}</td>
+      <td>
         <a routerLink="/question-categories/{{l.id}}">
           <button class="btn btn-primary" type="submit"> Update</button>
         </a>
         <button class="btn btn-danger ml-2" type="submit" (click)="delete(l)"> Delete</button>
-    </td>
-  </tr>
-</table>
+      </td>
+    </tr>
+  </table>
+</div>
