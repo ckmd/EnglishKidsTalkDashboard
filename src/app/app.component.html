@@ -1,49 +1,83 @@
 <mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
   <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
-    <p><button mat-button (click)="close('toggle button')">Close</button></p>
-    {{ title }}
+    <p><button mat-button (click)="close('toggle button')"> <i class="material-icons">
+        arrow_back
+        </i><span>close menu</span></button></p>
+
     <mat-list role="list">
       <mat-list-item role="listitem">
+        <button mat-button>
+          {{ title }}
+        </button>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <i class="material-icons">
+          assessment
+        </i>
         <button mat-button routerLink="/dashboard">
           Dashboard
         </button>
       </mat-list-item>
       <mat-list-item role="listitem">
+        <i class="material-icons">
+          assignment_ind
+        </i>
         <button mat-button routerLink="/users">
           Users
         </button>
       </mat-list-item>
       <mat-list-item role="listitem">
+        <i class="material-icons">
+          dns
+        </i>
         <button mat-button routerLink="/items">
           Item
         </button>
       </mat-list-item>
       <mat-list-item role="listitem">
+        <i class="material-icons">
+          receipt
+        </i>
         <button mat-button routerLink="/question-difficulties">
           Question Difficulty
         </button>
       </mat-list-item>
       <mat-list-item role="listitem">
+        <i class="material-icons">
+          vertical_split
+        </i>
         <button mat-button routerLink="/question-categories">
           Question Category
         </button>
       </mat-list-item>
       <mat-list-item role="listitem">
+        <i class="material-icons">
+          table_chart
+        </i>
         <button mat-button routerLink="/learning-topics">
           Learning Topic
         </button>
       </mat-list-item>
       <mat-list-item role="listitem">
+        <i class="material-icons">
+          view_list
+        </i>
         <button mat-button routerLink="/learning-items">
           Learning Item
         </button>
       </mat-list-item>
       <mat-list-item role="listitem">
+        <i class="material-icons">
+          trending_up
+        </i>
         <button mat-button routerLink="/challenges">
           challenge
         </button>
       </mat-list-item>
       <mat-list-item role="listitem">
+        <i class="material-icons">
+          message
+        </i>
         <button mat-button routerLink="/answers">
           Answer
         </button>
@@ -52,7 +86,11 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <p><button mat-button (click)="sidenav.open()">Open</button></p>
+    <p><button mat-button (click)="sidenav.open()"><span>open menu</span> 
+      <i class="material-icons">
+        arrow_forward
+        </i> 
+      </button></p>
 
     <router-outlet></router-outlet>
 
