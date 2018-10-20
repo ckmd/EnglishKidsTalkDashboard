@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Location } from '@angular/common';
 import { ItemsService } from '../../service/items.service';
 import { HttpClient } from '@angular/common/http';
+import { ItemcategoryService } from '../../service/itemcategory.service';
 
 @Component({
   selector: 'app-item-create',
@@ -14,15 +15,20 @@ export class ItemCreateComponent implements OnInit {
   addForm: FormGroup;
   selectedImage: File = null;
   selectedSnippet: File = null;
+  public itemCategories = [];
 
   constructor(
     private itemsService: ItemsService,
+    private itemCategory: ItemcategoryService,
     private formBuilder: FormBuilder,
     private location: Location,
     private http: HttpClient
   ) { }
 
   ngOnInit() {
+    this.itemCategory.getItemCategories()
+    .subscribe(itemCategories => this.itemCategories = itemCategories);
+    
     this.addForm = this.formBuilder.group({
       id: [],
       item_category_id: ['', Validators.required],
