@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Item } from '../../Item';
+import { Item } from '../../model/Item';
 import { ItemsService } from '../../service/items.service';
 import { HttpClient } from '@angular/common/http';
 

@@ -7,9 +7,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { HttpClientModule }    from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { ItemsComponent } from './item/items/items.component';
 import { ItemDetailComponent } from './item/item-detail/item-detail.component';
 import { ItemsService } from './service/items.service';
@@ -68,7 +66,6 @@ import { AnswerUpdateComponent } from './answer/answer-update/answer-update.comp
   declarations: [
     AppComponent,
     DashboardComponent,
-    UserDetailComponent,
     ItemsComponent,
     ItemDetailComponent,
     UserShowComponent,

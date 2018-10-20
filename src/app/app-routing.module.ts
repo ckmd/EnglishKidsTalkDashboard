@@ -2,7 +2,6 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent }      from './dashboard/dashboard.component';
 import { ItemsComponent }      from './item/items/items.component';
-import { UserDetailComponent }      from './user/user-detail/user-detail.component';
 import { ItemDetailComponent }      from './item/item-detail/item-detail.component';
 import { UserShowComponent }      from './user/user-show/user-show.component';
 
@@ -42,7 +41,6 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
 
   { path: 'users', component: UserShowComponent },
-  { path: 'userdetail/:id', component: UserDetailComponent },
 
   { path: 'items', component: ItemsComponent },
   { path: 'items-create', component: ItemCreateComponent },

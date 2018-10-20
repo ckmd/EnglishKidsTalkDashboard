@@ -13,9 +13,7 @@
     <th>action</th>
   </tr>
   <tr *ngFor="let user of users">
-    <a routerLink="/userdetail/{{user.id}}">
-      <td>{{user.id}}</td>
-    </a>
+    <td>{{user.id}}</td>
     <td>{{user.inventory_id}}</td>
     <td>{{user.name}}</td>
     <td>{{user.username}}</td>
@@ -31,7 +29,10 @@
     <td>{{user.star_gained}}</td>
     <td>{{user.xp_gained}}</td>
     <td>
-      <button type="submit" class="btn btn-danger ml-2" (click)="deleteUser(user)"> Delete</button>
+      <a routerLink="/users/{{user.id}}">
+        <button class="btn btn-primary"> Update</button>
+      </a>
+      <button class="btn btn-danger ml-2" (click)="deleteUser(user)"> Delete</button>
     </td>
   </tr>
 </table>
