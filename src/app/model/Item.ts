@@ -7,7 +7,6 @@ export interface Item {
   image: string;
   snippet: string;
   gender: number;
-  itemCategory: number;
   createdAt: string;
   updatedAt: string;
 }
