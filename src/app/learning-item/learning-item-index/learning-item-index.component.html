@@ -7,7 +7,7 @@
   <table>
   <tr>
     <th>id</th>
-    <th>topic id</th>
+    <th>topic name</th>
     <th>item xp</th>
     <th>title</th>
     <th>image</th>
@@ -15,7 +15,7 @@
   </tr>
   <tr *ngFor="let l of learningItems">
     <td>{{l.id}}</td>
-    <td>{{l.learning_topic_id}}</td>
+    <td>{{l.learningTopic?.learning_topic_name}}</td>
     <td>{{l.learning_item_xp}}</td>
     <td>{{l.learning_item_title}}</td>
     <td><img src="{{l.learning_item_image}}" width="64" height="64"></td>

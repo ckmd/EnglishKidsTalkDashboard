@@ -1,8 +1,12 @@
-<div *ngIf="questionCategory" class="container-fluid">
+<div *ngIf="questionCategory" class="container">
   <div>
     <h2>
       Update Question Category : {{questionCategory.id}}
     </h2>
+  </div>
+  <div class="form-group">
+    <label>Level id</label>
+      <input class="form-control" [(ngModel)]="questionCategory.question_difficulty_id"/>
   </div>
   <div class="form-group">
     <label>learning_topic_id</label>
