@@ -19,8 +19,8 @@ export class ItemsService {
   public getItems(): Observable<Item[]> {
     return this.http.get<Item[]>(this.url);
   }
-  createItem(learningItem: Item) {
-    return this.http.post<Item>(this.url, learningItem);
+  createItem(item: Item) {
+    return this.http.post<Item>(this.url, item);
   }
 
   deleteItem(id: number) {
@@ -29,13 +29,13 @@ export class ItemsService {
   getItem(id: number): Observable<Item> {
     const url = `${this.url}/${id}`;
     return this.http.get<Item>(url).pipe(
-      tap(_ => this.log(`fetched learningItem id=${id}`)),
+      tap(_ => this.log(`fetched item id=${id}`)),
       catchError(this.handleError<Item>(`getItem id=${id}`))
     );
   }
-  updateItem(learningItem: Item): Observable<any> {
-    return this.http.patch(this.url + '/' + learningItem.id, learningItem, httpOptions).pipe(
-      tap(_ => this.log(`updated learningItem id=${learningItem.id}`)),
+  updateItem(item: Item): Observable<any> {
+    return this.http.patch(this.url + '/' + item.id, item, httpOptions).pipe(
+      tap(_ => this.log(`updated item id=${item.id}`)),
       catchError(this.handleError<any>('updateItem'))
     );
   }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Location } from '@angular/common';
 import { LearningtopicService } from '../../service/learningtopic.service';
 import { HttpClient } from '@angular/common/http';
+import { QuestioncategoryService } from 'src/app/service/questioncategory.service';
 
 @Component({
   selector: 'app-learning-topic-create',
@@ -13,15 +14,20 @@ import { HttpClient } from '@angular/common/http';
 export class LearningTopicCreateComponent implements OnInit {
 
   constructor(
-  	private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
+    private qc: QuestioncategoryService,
   	private learningTopicService: LearningtopicService, 
   	private location : Location,
     private http : HttpClient) { }
   
   addForm: FormGroup;
   selectedFile: File = null;
+  public questionCategories = [];
 
   ngOnInit() {
+    this.qc.getQuestionCategories()
+    .subscribe(questionCategories => this.questionCategories = questionCategories);
+
   	this.addForm = this.formBuilder.group({
 	  id: [],
 		question_category_id: '',
