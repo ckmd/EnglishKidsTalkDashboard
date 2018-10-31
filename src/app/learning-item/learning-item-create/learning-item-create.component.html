@@ -5,6 +5,7 @@
       <label>learning_topic_id </label>
       <!-- <input type="text" formControlName="learning_topic_id" class="form-control"> -->
       <select formControlName="learning_topic_id" class="form-control">
+        <option value="">-- choose a Learning Topic --</option>
         <option *ngFor="let l of learningTopics"  value="{{l.id}}">
           {{l.learning_topic_name}}
         </option>

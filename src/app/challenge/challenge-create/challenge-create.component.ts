@@ -42,8 +42,7 @@ constructor(
 		challenge_star: ['', Validators.required],
     challenge_type: ['', Validators.required],
 		challenge_question: ['', Validators.required],
-		questionDifficulty: ['', Validators.required],
-    });
+	  });
 
   }
   onSubmit() {
@@ -65,10 +64,9 @@ constructor(
     uploadData.append('question_difficulty_id', this.addForm.get('question_difficulty_id').value);
     uploadData.append('challenge_xp', this.addForm.get('challenge_xp').value);
     uploadData.append('challenge_star', this.addForm.get('challenge_star').value);
+    uploadData.append('challenge_image', this.selectedFile, this.selectedFile.name);
     uploadData.append('challenge_type', this.addForm.get('challenge_type').value);
     uploadData.append('challenge_question', this.addForm.get('challenge_question').value);
-    uploadData.append('questionDifficulty', this.addForm.get('questionDifficulty').value);
-    uploadData.append('challenge_image', this.selectedFile, this.selectedFile.name);
 
     this.http.post('http://ekita-api.herokuapp.com/api/challenges', uploadData)
     .subscribe( res => {console.log(res); this.goBack();}
