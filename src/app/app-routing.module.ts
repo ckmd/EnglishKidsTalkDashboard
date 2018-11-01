@@ -33,9 +33,12 @@ import { AnswerCreateComponent } from './answer/answer-create/answer-create.comp
 import { AnswerShowComponent } from './answer/answer-show/answer-show.component';
 import { AnswerUpdateComponent } from './answer/answer-update/answer-update.component';
 
+import { HomeComponent } from './home/home.component';
+
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
 

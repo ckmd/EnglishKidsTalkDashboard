@@ -55,6 +55,7 @@ import { LoginComponent } from './login/login.component';
 import { AnswerCreateComponent } from './answer/answer-create/answer-create.component';
 import { AnswerShowComponent } from './answer/answer-show/answer-show.component';
 import { AnswerUpdateComponent } from './answer/answer-update/answer-update.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   providers:[
@@ -94,6 +95,7 @@ import { AnswerUpdateComponent } from './answer/answer-update/answer-update.comp
     AnswerCreateComponent,
     AnswerShowComponent,
     AnswerUpdateComponent,
+    HomeComponent,
   ],
   imports: [
     ReactiveFormsModule,
