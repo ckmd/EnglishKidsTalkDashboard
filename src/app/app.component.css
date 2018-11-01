@@ -6,4 +6,9 @@
     right: 0;
     background: #eee;
   }
-  
+  .navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
