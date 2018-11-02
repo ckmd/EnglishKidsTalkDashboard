@@ -6,7 +6,6 @@
   <table>
     <tr>
       <th>id</th>
-      <th>question Difficulty</th>
       <th>question category</th>
       <th>xp</th>
       <th>star</th>
@@ -17,11 +16,10 @@
     </tr>
     <tr *ngFor="let c of challenges">
       <td>{{c.id}}</td>
-      <td>{{c.questionDifficulty?.question_difficulty_name}}</td>
-      <td>{{c.question_category_id}}</td>
+      <td>{{c.questionCategory?.question_category_name}}</td>
       <td>{{c.challenge_xp}}</td>
       <td>{{c.challenge_star}}</td>
-      <td><img src="{{c.challenge_image}}" width="64" height="64"></td>
+      <td><img src="{{c.challenge_image}}" width="128" height="64"></td>
       <td>{{c.challenge_question}}</td>
       <td>{{c.challenge_type}}</td>
       <td>
