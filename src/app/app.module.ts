@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 // import { InMemoryDataService }  from './in-memory-data.service';
 import { ItemsComponent } from './item/items/items.component';
 import { ItemDetailComponent } from './item/item-detail/item-detail.component';
@@ -56,6 +56,12 @@ import { AnswerCreateComponent } from './answer/answer-create/answer-create.comp
 import { AnswerShowComponent } from './answer/answer-show/answer-show.component';
 import { AnswerUpdateComponent } from './answer/answer-update/answer-update.component';
 import { HomeComponent } from './home/home.component';
+import { ItemCategoryIndexComponent } from './item-category/item-category-index/item-category-index.component';
+import { ItemCategoryCreateComponent } from './item-category/item-category-create/item-category-create.component';
+import { ItemCategoryDetailComponent } from './item-category/item-category-detail/item-category-detail.component';
+import { LoginService } from './service/login.service';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './service/token-interceptor.service';
 
 @NgModule({
   providers:[
@@ -66,6 +72,13 @@ import { HomeComponent } from './home/home.component';
     LearningtopicService,
     ChallengeService,
     LearningitemService,
+    LoginService,
+    AuthGuard,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : TokenInterceptorService,
+      multi : true
+    }
   ],
   declarations: [
     AppComponent,
@@ -96,6 +109,9 @@ import { HomeComponent } from './home/home.component';
     AnswerShowComponent,
     AnswerUpdateComponent,
     HomeComponent,
+    ItemCategoryIndexComponent,
+    ItemCategoryCreateComponent,
+    ItemCategoryDetailComponent,
   ],
   imports: [
     ReactiveFormsModule,

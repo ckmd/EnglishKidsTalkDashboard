@@ -102,37 +102,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedCOntent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/users" routerLinkActive="active">User</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/users" routerLinkActive="active">User</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/items" routerLinkActive="active">Item</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/items" routerLinkActive="active">Item</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/question-difficulties" routerLinkActive="active">Difficulty</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/question-difficulties" routerLinkActive="active">Difficulty</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/question-categories" routerLinkActive="active">Category</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/question-categories" routerLinkActive="active">Category</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/learning-topics" routerLinkActive="active">Topic</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/learning-topics" routerLinkActive="active">Topic</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/learning-items" routerLinkActive="active">Learning</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/learning-items" routerLinkActive="active">Learning</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/challenges" routerLinkActive="active">Challenge</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/challenges" routerLinkActive="active">Challenge</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/answers" routerLinkActive="active">Answer</a>
+              <a class="nav-link" *ngIf="login.loggedIn()" routerLink="/answers" routerLinkActive="active">Answer</a>
             </li>
           </ul>
           <ul class="navbar-nav">
-            <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-            <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
-            <!-- <a class="nav-link" style="cursor:pointer" (click)="auth.logoutUser()">Logout</a> -->
+            <a class="nav-link" *ngIf="!login.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+            <a class="nav-link" *ngIf="login.loggedIn()" style="cursor:pointer" (click)="login.logoutUser()">Logout</a>
           </ul>
         </div>
       </nav>

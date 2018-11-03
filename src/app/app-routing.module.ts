@@ -34,44 +34,141 @@ import { AnswerShowComponent } from './answer/answer-show/answer-show.component'
 import { AnswerUpdateComponent } from './answer/answer-update/answer-update.component';
 
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // untuk menambahkan default routing pada saat dibuka pertama kali
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
 
-  { path: 'users', component: UserShowComponent },
+  {
+    path: 'users', 
+    component: UserShowComponent,
+    canActivate: [AuthGuard]
+  },
 
-  { path: 'items', component: ItemsComponent },
-  { path: 'items-create', component: ItemCreateComponent },
-  { path: 'items/:id', component: ItemDetailComponent },
+  { 
+    path: 'items', 
+    component: ItemsComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'items-create', 
+    component: ItemCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'items/:id', 
+    component: ItemDetailComponent,
+    canActivate: [AuthGuard]
+  },
 
-  { path: 'question-difficulties', component: QuestionDifficultyComponent },
-  { path: 'question-difficulties-create', component: QuestionDifficultyCreateComponent },
-  { path: 'question-difficulties/:id', component: QuestionDifficultyDetailComponent },
+  { 
+    path: 'question-difficulties',
+    component: QuestionDifficultyComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'question-difficulties-create', 
+    component: QuestionDifficultyCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'question-difficulties/:id', 
+    component: QuestionDifficultyDetailComponent,
+    canActivate: [AuthGuard]
+  },
 
-  { path: 'challenges', component: ChallengeIndexComponent },
-  { path: 'challenges/:id', component: ChallengeDetailComponent },
-  { path: 'challenges-create', component: ChallengeCreateComponent },
+  { 
+    path: 'challenges', 
+    component: ChallengeIndexComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'challenges/:id', 
+    component: ChallengeDetailComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'challenges-create', 
+    component: ChallengeCreateComponent,
+    canActivate: [AuthGuard]
+  },
 
-  { path: 'learning-items-create', component: LearningItemCreateComponent },
-  { path: 'learning-items', component: LearningItemIndexComponent },
-  { path: 'learning-items/:id', component: LearningItemDetailComponent },
-  { path: 'learning-items-update', component: LearningItemUpdateComponent },
+  { 
+    path: 'learning-items-create', 
+    component: LearningItemCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'learning-items', 
+    component: LearningItemIndexComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'learning-items/:id', 
+    component: LearningItemDetailComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'learning-items-update', 
+    component: LearningItemUpdateComponent,
+    canActivate: [AuthGuard]
+  },
 
-  { path: 'question-categories', component: QuestionCategoryComponent },
-  { path: 'question-categories-create', component: QuestionCategoryCreateComponent },
-  { path: 'question-categories/:id', component: QuestionCategoryDetailComponent },
+  { 
+    path: 'question-categories', 
+    component: QuestionCategoryComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'question-categories-create', 
+    component: QuestionCategoryCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'question-categories/:id', 
+    component: QuestionCategoryDetailComponent,
+    canActivate: [AuthGuard]
+  },
 
-  { path: 'learning-topics', component: LearningTopicShowComponent },
-  { path: 'learning-topics-create', component: LearningTopicCreateComponent },
-  { path: 'learning-topics/:id', component: LearningTopicDetailComponent },
+  { 
+    path: 'learning-topics', 
+    component: LearningTopicShowComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'learning-topics-create', 
+    component: LearningTopicCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'learning-topics/:id', 
+    component: LearningTopicDetailComponent,
+    canActivate: [AuthGuard]
+  },
 
-  { path: 'answers', component: AnswerShowComponent },
-  { path: 'answers-create', component: AnswerCreateComponent },
-  { path: 'answers/:id', component: AnswerUpdateComponent },
+  { 
+    path: 'answers', 
+    component: AnswerShowComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'answers-create', 
+    component: AnswerCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'answers/:id', 
+    component: AnswerUpdateComponent,
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({

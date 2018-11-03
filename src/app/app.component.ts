@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
+import { LoginService } from './service/login.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,15 @@ import {MatSidenav} from '@angular/material/sidenav';
 })
 export class AppComponent {
   title = 'Copyright English Kids Talks 2018';
-  @ViewChild('sidenav') sidenav: MatSidenav;
+  constructor(
+    private login : LoginService
+  ){}
+  // @ViewChild('sidenav') sidenav: MatSidenav;
 
-  reason = '';
+  // reason = '';
 
-  close(reason: string) {
-    this.reason = reason;
-    this.sidenav.close();
-  }
+  // close(reason: string) {
+  //   this.reason = reason;
+  //   this.sidenav.close();
+  // }
 }

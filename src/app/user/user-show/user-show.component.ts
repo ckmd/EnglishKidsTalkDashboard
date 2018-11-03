@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../model/User';
 import { UserService } from '../../service/user.service';
-
+import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-show',
@@ -11,12 +12,24 @@ import { UserService } from '../../service/user.service';
 export class UserShowComponent implements OnInit {
 
   public users = [];
-  constructor(private userService : UserService) {
+  constructor(
+    private userService : UserService,
+    private router: Router) {
    }
 
   ngOnInit() {
-  	this.userService.getUsers()
-  	.subscribe(data => this.users = data);
+    this.userService.getUsers()
+    .subscribe(
+      res => this.users = res,
+      err => {
+        if(err instanceof HttpErrorResponse){
+          if(err.status === 401){
+            this.router.navigate(['/login'])
+          }
+        }
+      }
+    )
+  	// .subscribe(data => this.users = data);
   }
 
   deleteUser(user: User): void {
