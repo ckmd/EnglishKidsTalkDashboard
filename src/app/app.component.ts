@@ -9,7 +9,7 @@ import { LoginService } from './service/login.service';
 })
 export class AppComponent {
   title = 'Copyright English Kids Talks 2018';
-  constructor(private login : LoginService){}
+  constructor(public login : LoginService){}
   // @ViewChild('sidenav') sidenav: MatSidenav;
 
   // reason = '';
