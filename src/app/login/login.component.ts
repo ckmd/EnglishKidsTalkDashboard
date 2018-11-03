@@ -9,7 +9,12 @@ import { LoginService } from '../service/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginUserData = []
+  public loginUserData: any = {
+    username:'',
+    password:''
+  };
+
+  // loginUserData = {}
   constructor(
     private router: Router,
     private ls : LoginService) { }
