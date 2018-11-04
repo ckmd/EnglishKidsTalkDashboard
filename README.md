@@ -1,5 +1,7 @@
 # EkitaDash
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f7abcc39d0cb4345b122db54975d2b92)](https://app.codacy.com/app/syahrulak98/EnglishKidsTalkDashboard?utm_source=github.com&utm_medium=referral&utm_content=ckmd/EnglishKidsTalkDashboard&utm_campaign=Badge_Grade_Dashboard)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
 ## Development server
