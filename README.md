@@ -16,6 +16,7 @@ Use username : admin and password : admin to login to the administrator dashboar
 Use the package manager [npm](https://npmjs.com/) to install.
 
 ```bash
+npm install -g @angular/cli
 git clone https://github.com/ckmd/EnglishKidsTalkDashboard.git
 npm install
 ng serve
