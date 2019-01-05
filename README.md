@@ -26,5 +26,6 @@ open http://localhost:4200/
 ## Authors
 
 * **Rachmad Syarul Hidayat** - *Initial work* - 
+* **Miftahun Najat** - *Programmer 1* - 
 
 See also the list of [contributors](https://github.com/ckmd/EnglishKidsTalkDashboard/graphs/contributors) who participated in this project.
