@@ -21,10 +21,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Navigate to `http://ekita-dashboard.herokuapp.com/`. The app will automatically reload if you change any of the source files.
 
-## Login as Administrator
-
-Use username : admin and password : admin to login to the administrator dashboard
-
 ## Installation and Development Server
 
 Use the package manager [npm](https://npmjs.com/) to install.
